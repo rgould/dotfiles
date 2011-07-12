@@ -1,3 +1,15 @@
+" All system-wide defaults are set in $VIMRUNTIME/debian.vim (usually just
+" /usr/share/vim/vimcurrent/debian.vim) and sourced by the call to :runtime
+" you can find below.  If you wish to change any of those settings, you should
+" do it in this file (/etc/vim/vimrc), since debian.vim will be overwritten
+" everytime an upgrade of the vim packages is performed.  It is recommended to
+" make changes after sourcing debian.vim since it alters the value of the
+" 'compatible' option.
+
+" This line should not be removed as it ensures that various options are
+" properly set to work with the Vim-related packages available in Debian.
+runtime! debian.vim
+
 runtime! autoload/pathogen.vim
 silent! call pathogen#runtime_append_all_bundles()
 
@@ -45,6 +57,13 @@ silent! call pathogen#runtime_append_all_bundles()
 
     " Make backspace work in insert mode
     set backspace=indent,eol,start
+
+    " automatically hide buffers when they are abandoned
+    set hidden
+
+    set showcmd             " Show (partial) command in status line.
+    set ignorecase          " Do case insensitive matching
+    set smartcase           " Do smart case matching
 
     augroup myfiletypes
         " Clear old autocmds in group
@@ -103,4 +122,12 @@ silent! call pathogen#runtime_append_all_bundles()
         call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
       endif
     endfunction
+
+    " Uncomment the following to have Vim jump to the last position when
+    " reopening a file
+    if has("autocmd")	
+      au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+         \| exe "normal g'\"" | endif
+    endif
+
 
