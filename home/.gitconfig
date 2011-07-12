@@ -1,0 +1,34 @@
+[user]
+  name = rgould
+  email = rwgould@gmail.com
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  sh = auto
+  ui = true
+  wtf = auto
+[color "branch"]
+  current = green reverse
+  local = green
+  remote = yellow
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+
+[core]
+  whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	editor = /usr/bin/vim
+
+[merge]
+  log = true
+[alias]
+	lol = log --pretty=oneline --abbrev-commit --graph --decorate
+[branch]
+	autosetuprebase = always
