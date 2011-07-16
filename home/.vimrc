@@ -20,6 +20,7 @@ silent! call pathogen#runtime_append_all_bundles()
 
     set guifont=Monaco:h13
     colorscheme solarized
+    set t_Co=256
 "    colorscheme ironman
 
     " These two enable syntax highlighting
