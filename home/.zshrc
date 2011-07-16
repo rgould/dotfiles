@@ -52,3 +52,5 @@ export PATH="$PATH:$HOME/bin"
 alias ssh-gu-staging="ssh -t staging.gaggleup.com 'screen -U -R richard'"
 alias ssh-gu-smoke="ssh -t smoke.gaggleup.com 'screen -U -R richard'"
 
+eval `dircolors ~/.dircolors`
+
