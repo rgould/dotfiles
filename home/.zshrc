@@ -51,4 +51,7 @@ unsetopt correct_all
 export PATH="$PATH:$HOME/bin"
 alias ssh-gu-staging="ssh -t staging.gaggleup.com 'screen -U -R richard'"
 alias ssh-gu-smoke="ssh -t smoke.gaggleup.com 'screen -U -R richard'"
+alias ....="cd ../../../"
+alias .....="cd ../../../../"
+alias be="bundle exec"
 
