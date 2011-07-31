@@ -16,7 +16,6 @@
   meta = yellow bold
   frag = magenta bold
   old = red bold
-  new = green bold
 [color "status"]
   added = yellow
   changed = green
@@ -25,6 +24,7 @@
 [core]
   whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
 	editor = /usr/bin/vim
+	autocrlf = input
 
 [merge]
   log = true
