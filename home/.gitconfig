@@ -26,8 +26,17 @@
 	editor = /usr/bin/vim
 	autocrlf = input
 
+[diff]
+  tool = p4diff
 [merge]
   log = true
+  keepBackup = false;
+  tool = p4merge
+[mergetool "p4merge"]
+  cmd = p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+  keepTemporaries = false
+  trustExitCode = false
+  keepBackup = false
 [alias]
 	lol = log --pretty=oneline --abbrev-commit --graph --decorate
 [branch]
