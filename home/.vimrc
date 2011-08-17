@@ -102,6 +102,8 @@ silent! call pathogen#runtime_append_all_bundles()
     nmap N Nzz
     nmap * *zz
     nmap # #zz
+    nmap <C-D> :NERDTree<cr>
+    nmap <C-T> :NERDTreeToggle<cr>
 
     " Yank from the cursor to the end of the line, to be consistent with C and D.
     nnoremap Y y$
