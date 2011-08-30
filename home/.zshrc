@@ -49,8 +49,8 @@ unsetopt correct_all
 
 # Customize to your needs...
 export PATH="$PATH:$HOME/bin"
-alias ssh-gu-staging="ssh -t staging.gaggleup.com 'screen -U -R richard'"
-alias ssh-gu-smoke="ssh -t smoke.gaggleup.com 'screen -U -R richard'"
+alias ssh-gu-staging="TERM=xterm ssh -t staging.gaggleup.com 'screen -U -R richard'"
+alias ssh-gu-smoke="TERM=xterm ssh -t smoke.gaggleup.com 'screen -U -R richard'"
 alias ....="cd ../../../"
 alias .....="cd ../../../../"
 alias be="bundle exec"
