@@ -45,6 +45,9 @@ silent! call pathogen#runtime_append_all_bundles()
     " Set temporary directory (don't litter local dir with swp/tmp files)
     set directory=/tmp/
 
+    " show whitespace
+    set list listchars=tab:\ \ ,trail:·
+
     " line numbers 
     set number
     setlocal numberwidth=5
@@ -91,6 +94,12 @@ silent! call pathogen#runtime_append_all_bundles()
     let g:bufExplorerShowRelativePath=1  " Show relative paths.
 
 " Section: mappings
+
+    let mapleader=","
+    " clear out whitespace at the end of the line
+    map <Leader>w :%s/\s\+$//
+    map <Leader>n :NERDTreeToggle
+    map <C-l> :noh
 
     set pastetoggle=<C-P> " Ctrl-P toggles paste mode
 
