@@ -41,3 +41,5 @@
 	lol = log --pretty=oneline --abbrev-commit --graph --decorate
 [branch]
 	autosetuprebase = always
+[github]
+	user = rgould
