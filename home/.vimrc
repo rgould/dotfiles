@@ -13,6 +13,18 @@ runtime! debian.vim
 runtime! autoload/pathogen.vim
 silent! call pathogen#runtime_append_all_bundles()
 
+function! <SID>StripTrailingWhitespaces()
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
+
 " Section: configuration
 
     set background=dark
@@ -98,7 +110,7 @@ silent! call pathogen#runtime_append_all_bundles()
 
     let mapleader=","
     " clear out whitespace at the end of the line
-    map <Leader>w :%s/\s\+$//
+    nnoremap <Leader>w :call <SID>StripTrailingWhitespaces()<CR>
     map <Leader>n :NERDTreeToggle
     map <C-l> :noh
 
