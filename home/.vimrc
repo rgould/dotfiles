@@ -13,16 +13,16 @@ runtime! debian.vim
 runtime! autoload/pathogen.vim
 silent! call pathogen#runtime_append_all_bundles()
 
-function! <SID>StripTrailingWhitespaces()
-    " Preparation: save last search, and cursor position.
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
-    " Do the business:
-    %s/\s\+$//e
-    " Clean up: restore previous search history, and cursor position
-    let @/=_s
-    call cursor(l, c)
+function! Preserve(command)
+  " Preparation: save last search, and cursor position.
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
+  " Do the business:
+  execute a:command
+  " Clean up: restore previous search history, and cursor position
+  let @/=_s
+  call cursor(l, c)
 endfunction
 
 " Section: configuration
@@ -110,7 +110,8 @@ endfunction
 
     let mapleader=","
     " clear out whitespace at the end of the line
-    nnoremap <Leader>w :call <SID>StripTrailingWhitespaces()<CR>
+    nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
+    nmap _= :call Preserve("normal gg=G")<CR>
     map <Leader>n :NERDTreeToggle
     map <C-l> :noh
 
