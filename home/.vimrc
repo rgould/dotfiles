@@ -73,6 +73,7 @@ silent! call pathogen#runtime_append_all_bundles()
         " Clear old autocmds in group
         autocmd!
         autocmd FileType ruby,eruby,yaml set autoindent shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+        autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
         au BufRead,BufNewFile *etc/nginx/* set ft=nginx 
         au BufRead,BufNewFile Gemfile set ft=ruby
         au BufRead,BufNewFile Capfile set ft=ruby
