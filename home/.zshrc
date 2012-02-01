@@ -25,6 +25,7 @@ export ZSH=$HOME/.oh-my-zsh
 export ZSH_THEME="jreese"
 
 export VISUAL="vim"
+export EDITOR="vim"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
@@ -39,7 +40,7 @@ export VISUAL="vim"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(github git rails ruby)
+plugins=(github git rails)
 
 source $ZSH/oh-my-zsh.sh
 source ~/.git-flow-completion.zsh
@@ -61,3 +62,17 @@ export REPORTTIME=5
 
 eval `dircolors ~/.dircolors`
 
+# Enable Ctrl-x-e to edit command line
+autoload -U edit-command-line
+# Emacs style
+#zle -N edit-command-line
+#bindkey '^xe' edit-command-line
+#bindkey '^x^e' edit-command-line
+# Vi style:
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
+bindkey '^E' edit-command-line                   # Opens Vim to edit current command line
+bindkey '^R' history-incremental-search-backward # Perform backward search in command line history
+bindkey '^S' history-incremental-search-forward  # Perform forward search in command line history
+bindkey '^P' history-search-backward             # Go back/search in history (autocomplete)
+bindkey '^N' history-search-forward              # Go forward/search in history (autocomplete)
