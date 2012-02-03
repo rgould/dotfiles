@@ -113,7 +113,11 @@ endfunction
     nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
     nmap _= :call Preserve("normal gg=G")<CR>
     map <Leader>n :NERDTreeToggle
-    map <C-l> :noh
+    map <C-i> :noh<CR>
+    map <C-h> <C-w>h
+    map <C-j> <C-w>j
+    map <C-k> <C-w>k
+    map <C-l> <C-w>l
 
     set pastetoggle=<C-P> " Ctrl-P toggles paste mode
 
