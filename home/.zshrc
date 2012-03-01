@@ -27,8 +27,6 @@ export ZSH_THEME="jreese"
 export VISUAL="vim"
 export EDITOR="vim"
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
-
 # Set to this to use case-sensitive completion
 # export CASE_SENSITIVE="true"
 
@@ -58,6 +56,7 @@ alias ....="cd ../../../"
 alias .....="cd ../../../../"
 alias be="bundle exec"
 alias ga="git add"
+alias gch="git checkout"
 export REPORTTIME=5
 
 eval `dircolors ~/.dircolors`
