@@ -32,6 +32,10 @@ export EDITOR="vim"
 
 # Comment this out to disable weekly auto-update checks
 # export DISABLE_AUTO_UPDATE="true"
+#
+
+# AUTO_TITLE mucks up tmux window naming
+export DISABLE_AUTO_TITLE="true"
 
 # Uncomment following line if you want to disable colors in ls
 # export DISABLE_LS_COLORS="true"
@@ -59,7 +63,12 @@ alias ga="git add"
 alias gch="git checkout"
 export REPORTTIME=5
 
-eval `dircolors ~/.dircolors`
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+
+if [[ -x dircolors ]] then
+  eval `dircolors ~/.dircolors`
+fi
 
 # Enable Ctrl-x-e to edit command line
 autoload -U edit-command-line
@@ -75,3 +84,7 @@ bindkey '^R' history-incremental-search-backward # Perform backward search in co
 bindkey '^S' history-incremental-search-forward  # Perform forward search in command line history
 bindkey '^P' history-search-backward             # Go back/search in history (autocomplete)
 bindkey '^N' history-search-forward              # Go forward/search in history (autocomplete)
+
+if [[ -r ~/.aliasrc ]]; then
+  source ~/.aliasrc
+fi
