@@ -29,6 +29,7 @@ endfunction
 
     set background=dark
 
+    set colorcolumn=80
 
     set guifont=Monaco:h13
     colorscheme solarized
