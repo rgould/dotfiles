@@ -1,0 +1,4 @@
+alias gf="git fetch"
+alias vess="/usr/share/vim/vim73/macros/less.sh"
+alias less="vess"
+alias more="vess"
