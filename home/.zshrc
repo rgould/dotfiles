@@ -44,6 +44,9 @@ export DISABLE_AUTO_TITLE="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(github git rails)
 
+# disable the annoying oh-my-zsh update prompt. this will auto update now.
+export DISABLE_UPDATE_PROMPT="true"
+
 source $ZSH/oh-my-zsh.sh
 source ~/.git-flow-completion.zsh
 
@@ -53,8 +56,8 @@ unsetopt correct_all
 # Customize to your needs...
 export ANDROID_HOME=`brew --prefix android`
 export PATH="$PATH:$HOME/bin:$ANDROID_HOME/tools"
-alias ssh-gu-staging="TERM=xterm ssh -t staging.gaggleup.com 'screen -U -R richard'"
-alias ssh-gu-smoke="TERM=xterm ssh -t smoke.gaggleup.com 'screen -U -R richard'"
+alias ssh-gu-staging="TERM=xterm ssh -t staging 'screen -U -R richard'"
+alias ssh-gu-smoke="TERM=xterm ssh -t smoke 'screen -U -R richard'"
 alias ssh-gu-ct="TERM=xterm ssh -t ct 'screen -U -R richard'"
 alias ....="cd ../../../"
 alias .....="cd ../../../../"
