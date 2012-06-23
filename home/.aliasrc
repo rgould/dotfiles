@@ -1,4 +1,15 @@
 alias gf="git fetch"
+alias gd="git diff"
+alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
 alias vess="/usr/share/vim/vim73/macros/less.sh"
 alias less="vess"
 alias more="vess"
+
+alias p="ps aux"
+
+alias t="tmux"
+alias tm="tmuxinator"
+
+alias -g G="| grep"
+alias -g GI="| grep -i"
