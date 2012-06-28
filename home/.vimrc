@@ -81,6 +81,7 @@ endfunction
     set showcmd             " Show (partial) command in status line.
     set ignorecase          " Do case insensitive matching
     set smartcase           " Do smart case matching
+    set history=200
 
     augroup myfiletypes
         " Clear old autocmds in group
@@ -119,6 +120,17 @@ endfunction
     map <C-j> <C-w>j
     map <C-k> <C-w>k
     map <C-l> <C-w>l
+
+    nnoremap <leader><leader> <c-^
+
+    " disable cursor keys in normal mode
+    map <Left>  :echo "no!"<cr>
+    map <Right> :echo "no!"<cr>
+    map <Up>    :echo "no!"<cr>
+    map <Down>  :echo "no!"<cr>
+
+    " find merge conflict markers
+    nmap <silent> <leader>cf <ESC>/\v^[<=>]{7}( .*\|$)<CR>
 
     set pastetoggle=<C-P> " Ctrl-P toggles paste mode
 
