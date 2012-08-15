@@ -49,7 +49,7 @@ unsetopt correct_all
 
 # Customize to your needs...
 export ANDROID_HOME=`brew --prefix android`
-export PATH="$PATH:$HOME/bin:$ANDROID_HOME/tools"
+export PATH="$PATH:$HOME/bin:$HOME/.bin:$ANDROID_HOME/tools"
 alias ssh-gu-staging="TERM=xterm ssh -t staging.gaggleup.com 'screen -U -R richard'"
 alias ssh-gu-smoke="TERM=xterm ssh -t smoke.gaggleup.com 'screen -U -R richard'"
 alias ssh-gu-ct="TERM=xterm ssh -t ct 'screen -U -R richard'"
