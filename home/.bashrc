@@ -110,3 +110,5 @@ export PATH=$PATH:/var/lib/gems/1.8/bin
 if [[ -s $HOME/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; fi
 
 fi
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

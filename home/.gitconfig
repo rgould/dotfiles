@@ -23,7 +23,7 @@
 
 [core]
   whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
-	editor = /usr/bin/vim
+	editor = vim
 	autocrlf = input
 
 [diff]
@@ -41,3 +41,5 @@
 	lol = log --pretty=oneline --abbrev-commit --graph --decorate
 [branch]
 	autosetuprebase = always
+[github]
+	user = rgould

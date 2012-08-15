@@ -13,10 +13,23 @@ runtime! debian.vim
 runtime! autoload/pathogen.vim
 silent! call pathogen#runtime_append_all_bundles()
 
+function! Preserve(command)
+  " Preparation: save last search, and cursor position.
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
+  " Do the business:
+  execute a:command
+  " Clean up: restore previous search history, and cursor position
+  let @/=_s
+  call cursor(l, c)
+endfunction
+
 " Section: configuration
 
     set background=dark
 
+    set colorcolumn=80
 
     set guifont=Monaco:h13
     colorscheme solarized
@@ -68,11 +81,13 @@ silent! call pathogen#runtime_append_all_bundles()
     set showcmd             " Show (partial) command in status line.
     set ignorecase          " Do case insensitive matching
     set smartcase           " Do smart case matching
+    set history=200
 
     augroup myfiletypes
         " Clear old autocmds in group
         autocmd!
         autocmd FileType ruby,eruby,yaml set autoindent shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+        autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
         au BufRead,BufNewFile *etc/nginx/* set ft=nginx 
         au BufRead,BufNewFile Gemfile set ft=ruby
         au BufRead,BufNewFile Capfile set ft=ruby
@@ -97,9 +112,25 @@ silent! call pathogen#runtime_append_all_bundles()
 
     let mapleader=","
     " clear out whitespace at the end of the line
-    map <Leader>w :%s/\s\+$//
+    nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
+    nmap _= :call Preserve("normal gg=G")<CR>
     map <Leader>n :NERDTreeToggle
-    map <C-l> :noh
+    map <C-i> :noh<CR>
+    map <C-h> <C-w>h
+    map <C-j> <C-w>j
+    map <C-k> <C-w>k
+    map <C-l> <C-w>l
+
+    nnoremap <leader><leader> <c-^
+
+    " disable cursor keys in normal mode
+    map <Left>  :echo "no!"<cr>
+    map <Right> :echo "no!"<cr>
+    map <Up>    :echo "no!"<cr>
+    map <Down>  :echo "no!"<cr>
+
+    " find merge conflict markers
+    nmap <silent> <leader>cf <ESC>/\v^[<=>]{7}( .*\|$)<CR>
 
     set pastetoggle=<C-P> " Ctrl-P toggles paste mode
 
