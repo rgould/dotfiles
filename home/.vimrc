@@ -81,7 +81,15 @@ endfunction
     set showcmd             " Show (partial) command in status line.
     set ignorecase          " Do case insensitive matching
     set smartcase           " Do smart case matching
+    nnoremap / /\v
+    vnoremap / /\v
+    set gdefault
     set history=200
+    set cursorline
+    autocmd BufEnter * set relativenumber
+    nnoremap <tab> %
+    vnoremap <tab> %
+    nnoremap ; :
 
     augroup myfiletypes
         " Clear old autocmds in group
