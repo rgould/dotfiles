@@ -68,6 +68,7 @@ export REPORTTIME=5
 
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+[[ -s "$HOME/nvm/nvm.sh" ]] && . "$HOME/nvm/nvm.sh"
 
 if [[ -x dircolors ]] then
   eval `dircolors ~/.dircolors`
