@@ -1,0 +1,16 @@
+# ~/.tmuxinator/gaggleup.yml
+# you can make as many tabs as you wish...
+
+project_name: GaggleUp
+project_root: ~/gaggleup
+rvm: 1.9.3-p125@gaggleup
+pre: 
+tabs:
+  - vim: vim
+  - shell:
+  - guard: be guard start
+  - console: rails c
+  - server: rails s
+  - database: rails db
+  - logs: tail -f log/development.log
+  - chef: cd ../chef

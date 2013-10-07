@@ -1,0 +1,13 @@
+# ~/.tmuxinator/chef.yml
+# you can make as many tabs as you wish...
+
+project_name: chef
+project_root: ~/chef
+rvm: 1.9.2-p180@gaggleup-chef
+pre:
+tabs:
+  - vim: vim
+  - zsh:
+  - smoke: ssh-gu-smoke
+  - staging: ssh-gu-staging
+  - ct: ssh-gu-ct

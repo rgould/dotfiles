@@ -1,0 +1,12 @@
+project_name: Shoplocket
+project_root: ~/shop-locket
+rvm: 1.9.3-p125
+pre: 
+tabs:
+  - vim: vim
+  - shell:
+  - guard: be guard start
+  - console: rails c
+  - server: rails s
+  - database: rails db
+  - logs: tail -f log/development.log
