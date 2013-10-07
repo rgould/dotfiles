@@ -161,6 +161,18 @@ endfunction
     nmap <C-D> :NERDTree<cr>
     nmap <C-T> :NERDTreeToggle<cr>
 
+    " Rails i18n tools
+    " Extract plain text from HAML, yanks to "b:
+    nmap <leader>q vg_"bc=t('.')hi
+    " Select a double quoted string, yank to b, replace with t('.')
+    nmap <leader>' vi'"byca' t('.')hi
+    " Select a double quoted string, yank to b, replace with t('.')
+    nmap <leader>" vi""byca" t('.')hi
+
+    " Select a key, switch to last file (should be .yml file) and output key:
+    " string from \"b and "c
+    nmap <leader>a viw"cyoc: "b"
+
     " Yank from the cursor to the end of the line, to be consistent with C and D.
     nnoremap Y y$
 
