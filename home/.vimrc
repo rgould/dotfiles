@@ -130,6 +130,9 @@ endfunction
     map <C-k> <C-w>k
     map <C-l> <C-w>l
 
+    " when some text is selected, copy it to OSX's clipboard with this
+    vmap <C-c> :w !pbcopy<cr>
+
     nnoremap <leader><leader> <c-^
 
     " disable cursor keys in normal mode
