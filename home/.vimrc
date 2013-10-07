@@ -123,6 +123,7 @@ endfunction
     nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
     nmap _= :call Preserve("normal gg=G")<CR>
     map <Leader>n :NERDTreeToggle
+    map <Leader>8 :let &background = ( &background == "dark"? "light" : "dark" )<CR>
     map <C-i> :noh<CR>
     map <C-h> <C-w>h
     map <C-j> <C-w>j
