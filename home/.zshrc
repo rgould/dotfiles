@@ -89,3 +89,6 @@ bindkey '^N' history-search-forward              # Go forward/search in history 
 if [[ -r ~/.aliasrc ]]; then
   source ~/.aliasrc
 fi
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
