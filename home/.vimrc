@@ -141,6 +141,10 @@ endfunction
     map <Up>    :echo "no!"<cr>
     map <Down>  :echo "no!"<cr>
 
+    cnoremap %% <C-R>=expand('%:h').'/'<cr>
+    map <leader>e :edit %%
+    map <leader>v :view %%
+
     " find merge conflict markers
     nmap <silent> <leader>cf <ESC>/\v^[<=>]{7}( .*\|$)<CR>
 
