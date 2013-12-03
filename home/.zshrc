@@ -1,3 +1,5 @@
+DISABLE_AUTO_UPDATE="true"
+
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -42,7 +44,7 @@ export DISABLE_AUTO_TITLE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(github git rails)
+plugins=(git)
 
 # disable the annoying oh-my-zsh update prompt. this will auto update now.
 export DISABLE_UPDATE_PROMPT="true"
