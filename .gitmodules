@@ -13,3 +13,6 @@
 [submodule "home/.vim/bundle/vim-surround"]
 	path = home/.vim/bundle/vim-surround
 	url = git://github.com/tpope/vim-surround.git
+[submodule "home/.vim/bundle/vim-less"]
+	path = home/.vim/bundle/vim-less
+	url = https://github.com/groenewege/vim-less
