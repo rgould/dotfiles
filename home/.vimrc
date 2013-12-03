@@ -129,6 +129,17 @@ endfunction
     map <C-k> <C-w>k
     map <C-l> <C-w>l
 
+    function! NumberToggle()
+      if(&relativenumber == 1)
+        set number
+      else
+        set relativenumber
+      endif
+    endfunc
+
+    nnoremap <C-h> :call NumberToggle()<cr>
+
+
     " when some text is selected, copy it to OSX's clipboard with this
     vmap <C-c> :w !pbcopy<cr>
 
