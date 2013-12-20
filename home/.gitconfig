@@ -42,6 +42,7 @@
   alias = config --get-regexp alias
   lol = log --pretty=oneline --abbrev-commit --graph --decorate
   ci = commit
+  cl = clone
   co = checkout
   dc = diff --cached
   di = diff
