@@ -4,6 +4,8 @@ alias v="vim"
 
 alias a="ack"
 alias c="cat"
+alias pat="pygmentize"
+alias p="pygmentize"
 alias k="kill"
 alias r="rails"
 alias rk="rake"
@@ -15,8 +17,12 @@ alias frun="foreman run bundle exec"
 alias gf="git fetch"
 alias gd="git diff"
 alias gr="git reset"
+alias grh="git reset HEAD~1"
 alias grm="git rm"
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias wip="git add -A .;git commit -m 'wip'"
+alias unwip="git reset HEAD~1"
+alias gh="open \"https://github.com/\$(current_repository | cut -f 1 -d .)\""
 
 alias vess="/usr/share/vim/vim73/macros/less.sh"
 alias less="vess"
@@ -29,5 +35,11 @@ alias tm="tmuxinator"
 
 alias -g G="| grep"
 alias -g GI="| grep -i"
+alias -g GV="| grep -v"
+alias -g GIV="| grep -iv"
+
 
 alias unfocus="for file in \$(grep -irl ', :focus' spec) ; do sed -i '' 's/, :focus//' \$file; done"
+alias f="foreman start"
+
+alias fuck='sudo $(history -p \!\!)'

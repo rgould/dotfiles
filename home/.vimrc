@@ -66,6 +66,7 @@ endfunction
     setlocal numberwidth=5
 
     set autoindent shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+    " :autocmd BufRead,BufNewFile /Users/rgould/okgrow/Workpop-Web/* setlocal ts=4 sw=4
 
     " Enable tab complete for commands.
     " first tab shows all matches. next tab starts cycling through the matches
@@ -86,6 +87,9 @@ endfunction
     set gdefault
     set history=200
     set cursorline
+    hi cursorline cterm=none term=none
+    autocmd WinEnter * setlocal cursorline
+    autocmd WinLeave * setlocal nocursorline
     autocmd BufEnter * set relativenumber
     nnoremap <tab> %
     vnoremap <tab> %
@@ -111,6 +115,8 @@ endfunction
     autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
     autocmd FileType php set omnifunc=phpcomplete#CompletePHP
     autocmd FileType c set omnifunc=ccomplete#Complete
+    " .md defaults to Modula-2. We probably want markdown
+    autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
     " have some fun with bufexplorer
     let g:bufExplorerDefaultHelp=1       " Do not show default help.
@@ -137,7 +143,7 @@ endfunction
       endif
     endfunc
 
-    nnoremap <C-h> :call NumberToggle()<cr>
+    nnoremap <C-x> :call NumberToggle()<cr>
 
 
     " when some text is selected, copy it to OSX's clipboard with this
@@ -250,19 +256,22 @@ vmap <leader>z <Esc>:%s/<c-r>=GetVisual()<cr>/
 
 " Run a given vim command on the results of fuzzy selecting from a given shell
 " command. See usage below.
-function! SelectaCommand(choice_command, vim_command)
+function! SelectaCommand(choice_command, selecta_args, vim_command)
   try
-    silent! exec a:vim_command . " " . system(a:choice_command . " | selecta")
+    let selection = system(a:choice_command . " | selecta " . a:selecta_args)
   catch /Vim:Interrupt/
     " Swallow the ^C so that the redraw below happens; otherwise there will be
     " leftovers from selecta on the screen
+    redraw!
+    return
   endtry
   redraw!
+  exec a:vim_command . " " . selection
 endfunction
 
 " Find all files in all non-dot directories starting in the working directory.
 " Fuzzy select one of those. Open the selected file with :e.
-map <leader>f :call SelectaCommand("find * -type f", ":e")<cr>
+nnoremap <leader>f :call SelectaCommand("find * -type f", "", ":e")<cr>
 
 function! Get_visual_selection()
   let [lnum1, col1] = getpos("'<")[1:2]
@@ -272,3 +281,12 @@ function! Get_visual_selection()
   let lines[0] = lines[0][col1 - 1:]
   return join(lines, "\n")
 endfunction
+
+function! SelectaIdentifier()
+  " Yank the word under the cursor into the z register
+  normal "zyiw
+  " Fuzzy match files in the current directory, starting with the word under
+  " the cursor
+  call SelectaCommand("find * -type f", "-s " . @z, ":e")
+endfunction
+nnoremap <leader>g :call SelectaIdentifier()<cr>

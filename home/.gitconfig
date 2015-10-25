@@ -25,6 +25,7 @@
   whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
 	editor = vim
 	autocrlf = input
+	excludesfile = /Users/rgould/.gitignore_global
 
 [diff]
   tool = p4diff
