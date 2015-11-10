@@ -56,7 +56,10 @@ source ~/.git-flow-completion.zsh
 unsetopt correct_all
 
 # Customize to your needs...
-export ANDROID_HOME=`brew --prefix android`
+if hash brew 2>/dev/null; then
+  export ANDROID_HOME=`brew --prefix android`
+fi
+
 export PATH="$PATH:$HOME/bin:$HOME/.bin:$ANDROID_HOME/tools"
 alias ssh-gu-staging="TERM=xterm ssh -t staging 'screen -U -R richard'"
 alias ssh-gu-smoke="TERM=xterm ssh -t smoke 'screen -U -R richard'"
