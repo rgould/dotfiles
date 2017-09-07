@@ -60,7 +60,7 @@ if hash brew 2>/dev/null; then
   export ANDROID_HOME=`brew --prefix android`
 fi
 
-export PATH="$PATH:$HOME/bin:$HOME/.bin:$ANDROID_HOME/tools"
+export PATH="$PATH:$HOME/bin:$ANDROID_HOME/tools"
 alias ssh-gu-staging="TERM=xterm ssh -t staging 'screen -U -R richard'"
 alias ssh-gu-smoke="TERM=xterm ssh -t smoke 'screen -U -R richard'"
 alias ssh-gu-ct="TERM=xterm ssh -t ct 'screen -U -R richard'"
@@ -101,3 +101,6 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+
+# added by okgrow/ok
+export PATH=$PATH:/home/rgould/.bin
