@@ -16,3 +16,9 @@
 [submodule "home/.vim/bundle/vim-less"]
 	path = home/.vim/bundle/vim-less
 	url = https://github.com/groenewege/vim-less
+[submodule "home/.vim/bundle/nerdtree"]
+	path = home/.vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "home/.vim/bundle/vim-latex-live-preview"]
+	path = home/.vim/bundle/vim-latex-live-preview
+	url = https://github.com/xuhdev/vim-latex-live-preview.git
