@@ -44,7 +44,7 @@ export DISABLE_AUTO_TITLE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git git-remote-branch)
 
 # disable the annoying oh-my-zsh update prompt. this will auto update now.
 export DISABLE_UPDATE_PROMPT="true"
@@ -56,7 +56,7 @@ source ~/.git-flow-completion.zsh
 unsetopt correct_all
 
 # Customize to your needs...
-export ANDROID_HOME=`brew --prefix android`
+# export ANDROID_HOME=`brew --prefix android`
 export PATH="$PATH:$HOME/bin:$HOME/.bin:$ANDROID_HOME/tools"
 alias ssh-gu-staging="TERM=xterm ssh -t staging 'screen -U -R richard'"
 alias ssh-gu-smoke="TERM=xterm ssh -t smoke 'screen -U -R richard'"
@@ -98,3 +98,32 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+
+# selecta
+
+# By default, ^S freezes terminal output and ^Q resumes it. Disable that so
+# that those keys can be used for other things.
+unsetopt flowcontrol
+# Run Selecta in the current working directory, appending the selected path, if
+# any, to the current command.
+function insert-selecta-path-in-command-line() {
+    local selected_path
+    # Print a newline or we'll clobber the old prompt.
+    echo
+    # Find the path; abort if the user doesn't select anything.
+    selected_path=$(find * -type f | selecta) || return
+    # Append the selection to the current command buffer.
+    eval 'LBUFFER="$LBUFFER$selected_path"'
+    # Redraw the prompt since Selecta has drawn several new lines of text.
+    zle reset-prompt
+}
+# Create the zle widget
+zle -N insert-selecta-path-in-command-line
+# Bind the key to the newly created widget
+bindkey "^S" "insert-selecta-path-in-command-line"
+
+export LC_ALL=is_IS.UTF-8
+export LANG=is_IS.UTF-8
+# added by okgrow/ok
+export PATH=$PATH:/Users/rgould/.bin
+export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
