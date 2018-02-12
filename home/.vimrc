@@ -10,8 +10,9 @@
 " properly set to work with the Vim-related packages available in Debian.
 runtime! debian.vim
 
-runtime! autoload/pathogen.vim
-silent! call pathogen#runtime_append_all_bundles()
+" runtime! autoload/pathogen.vim
+" silent! call pathogen#runtime_append_all_bundles()
+execute pathogen#infect()
 
 function! Preserve(command)
   " Preparation: save last search, and cursor position.
@@ -28,69 +29,77 @@ endfunction
 " Section: configuration
 
     set background=dark
-
-    set colorcolumn=80
-
+    set colorcolumn=80,120
     set guifont=Monaco:h13
     colorscheme solarized
     set t_Co=256
-"    colorscheme ironman
-
-    " These two enable syntax highlighting
     set nocompatible " We're running Vim, not Vi!
-    syntax on        " Enable syntax highlighting
-
+    syntax on
     " Enable filetype-specific indenting and plugins
     filetype plugin indent on
-
     " show the `best match so far' as search strings are typed
     set incsearch
-
     " Highlight search results once found:
     set hlsearch
-
     "sm: flashes matching brackets or parentheses
     set showmatch
-
     "sta: helps with backspacing because of expandtab
     set smarttab
-
     " Set temporary directory (don't litter local dir with swp/tmp files)
     set directory=/tmp/
-
     " show whitespace
     set list listchars=tab:\ \ ,trail:·
-
-    " line numbers 
+    " line numbers
     set number
     setlocal numberwidth=5
-
+    " scroll the view screen when moving within x lines of the end
+    set scrolloff=5
     set autoindent shiftwidth=2 softtabstop=2 tabstop=2 expandtab
-    " :autocmd BufRead,BufNewFile /Users/rgould/okgrow/Workpop-Web/* setlocal ts=4 sw=4
-
+    set foldmethod=indent   "fold based on indent
+    set foldnestmax=10      "deepest fold is 10 levels
+    set nofoldenable        "dont fold by default
+    set foldlevel=1         "this is just what i use
     " Enable tab complete for commands.
     " first tab shows all matches. next tab starts cycling through the matches
     set wildmenu
     set wildmode=list:longest,full
-
     " Make backspace work in insert mode
     set backspace=indent,eol,start
-
     " automatically hide buffers when they are abandoned
     set hidden
-
     set showcmd             " Show (partial) command in status line.
     set ignorecase          " Do case insensitive matching
     set smartcase           " Do smart case matching
+    set gdefault
+    set history=10000
+    " disable until https://github.com/vim/vim/issues/1735 fixed :(
+    " set cursorline
+    "Reference: http://stackoverflow.com/questions/2732267/vim-loses-undo-history-when-changing-buffers
+    "Persistent undo
+    set undofile
+    set undodir=$HOME/.vim/undo
+    set undolevels=1000
+    set undoreload=10000
+    set switchbuf=useopen " when opening a file, jump to the buffer if it's
+                          " already open
+    set winwidth=79 " always try to make the current window at least 79 cols
+    " Insert only one space when joining lines that contain sentence-terminating
+    " punctuation like `.`.
+    set nojoinspaces
+    " Modelines (comments that set vim options on a per-file basis)
+    set modeline
+    set modelines=3
+
+    set tags=./.git/tags
+    map <leader>r :TlistToggle<CR>
+
     nnoremap / /\v
     vnoremap / /\v
-    set gdefault
-    set history=200
-    set cursorline
     hi cursorline cterm=none term=none
     autocmd WinEnter * setlocal cursorline
     autocmd WinLeave * setlocal nocursorline
-    autocmd BufEnter * set relativenumber
+    " disable until https://github.com/vim/vim/issues/1735 fixed :(
+    " autocmd BufEnter * set relativenumber
     nnoremap <tab> %
     vnoremap <tab> %
     nnoremap ; :
@@ -100,10 +109,12 @@ endfunction
         autocmd!
         autocmd FileType ruby,eruby,yaml set autoindent shiftwidth=2 softtabstop=2 tabstop=2 expandtab
         autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
-        au BufRead,BufNewFile *etc/nginx/* set ft=nginx 
+        autocmd Filetype tex setl updatetime=1
+        au BufRead,BufNewFile *etc/nginx/* set ft=nginx
         au BufRead,BufNewFile Gemfile set ft=ruby
         au BufRead,BufNewFile Capfile set ft=ruby
         au BufRead,BufNewFile *.god set ft=ruby
+        au BufRead,BufNewFile .aliasrc set ft=sh
     augroup END
 
     " Turn on language specific omnifuncs
@@ -122,6 +133,46 @@ endfunction
     let g:bufExplorerDefaultHelp=1       " Do not show default help.
     let g:bufExplorerShowRelativePath=1  " Show relative paths.
 
+    " open Latex PDFs in Preview
+    let g:livepreview_previewer = 'open -a Preview'
+
+"    set statusline=%f
+    " set statusline=%t       "tail of the filename
+    " set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
+    " set statusline+=%{&ff}] "file format
+    " set statusline+=%h      "help file flag
+    " set statusline+=%m      "modified flag
+    " set statusline+=%r      "read only flag
+    " set statusline+=%y      "filetype
+    " set statusline+=%=      "left/right separator
+    " set statusline+=%c,     "cursor column
+    " set statusline+=%l/%L   "cursor line/total lines
+
+     "set statusline=%f
+     "set statusline+=%=[%{strlen(&fenc)?&fenc:'none'},%{&ff}] " file encoding/format
+     "set statusline+=%h%m%r%y " file flags
+     "set statusline+=\ \     " separator
+     "set statusline+=%l/%L:%c "cursor position
+     "set statusline+=\ %P    "percent through file
+
+    set statusline=[%n]\ %<%.99f\ %h%w%m%r%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%y%=%-16(\ %l,%c-%v\ %)%P
+
+    " Syntastic
+    " set statusline+=%#warningmsg#
+    " set statusline+=%{SyntasticStatuslineFlag()}
+    " set statusline+=%*
+
+    let g:syntastic_always_populate_loc_list = 1
+    let g:syntastic_auto_loc_list = 1
+    " let g:syntastic_check_on_open = 1
+    let g:syntastic_check_on_wq = 0
+    let g:syntastic_ruby_checkers = ['rubocop']
+
+    let g:syntastic_mode_map = {
+        \ "mode": "passive",
+        \ "active_filetypes": [],
+        \ "passive_filetypes": [] }
+
 " Section: mappings
 
     let mapleader=","
@@ -134,6 +185,8 @@ endfunction
     map <C-j> <C-w>j
     map <C-k> <C-w>k
     map <C-l> <C-w>l
+    " open a tag in a vertical split
+    map <C-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
     function! NumberToggle()
       if(&relativenumber == 1)
@@ -161,6 +214,8 @@ endfunction
     map <leader>e :edit %%
     map <leader>v :view %%
 
+    nnoremap <leader>d :Dispatch<CR>
+
     " find merge conflict markers
     nmap <silent> <leader>cf <ESC>/\v^[<=>]{7}( .*\|$)<CR>
 
@@ -177,6 +232,11 @@ endfunction
     nmap <C-D> :NERDTree<cr>
     nmap <C-T> :NERDTreeToggle<cr>
 
+    let g:NERDTreeDirArrows = 1
+    let g:NERDTreeDirArrowExpandable = '▸'
+    let g:NERDTreeDirArrowCollapsible = '▾'
+    let g:NERDTreeGlyphReadOnly = "RO"
+
     " Rails i18n tools
     " Extract plain text from HAML, yanks to "b:
     nmap <leader>q vg_"bc=t('.')hi
@@ -184,10 +244,19 @@ endfunction
     nmap <leader>' vi'"byca' t('.')hi
     " Select a double quoted string, yank to b, replace with t('.')
     nmap <leader>" vi""byca" t('.')hi
-
     " Select a key, switch to last file (should be .yml file) and output key:
     " string from \"b and "c
     nmap <leader>a viw"cyoc: "b"
+    " End Rails i18n tools
+
+    nnoremap <leader>rt :!foreman run bundle exec rspec %<cr>
+    nnoremap <leader>ru :!rspec %<cr>
+    nnoremap <leader>c :!rubocop -D %<cr>
+    nnoremap <leader>ra :Dispatch foreman run bundle exec rake spec<cr>
+    nnoremap <leadeR>rs :execute "!rspec %:" . line(".")<cr>
+
+    " delete rspec :focus in current file
+    " command Unfocus s /, :focus//
 
     " Yank from the cursor to the end of the line, to be consistent with C and D.
     nnoremap Y y$
@@ -202,6 +271,11 @@ endfunction
     " Ruby stuff
     " hashrocket
     imap <C-l> <Space>=><Space>
+
+    nnoremap <leader><leader> <c-^>
+
+    " Align selected lines
+    vnoremap <leader>ib :!align<cr>
 
     " Uncomment the following to have Vim jump to the last position when
     " reopening a file
@@ -290,3 +364,22 @@ function! SelectaIdentifier()
   call SelectaCommand("find * -type f", "-s " . @z, ":e")
 endfunction
 nnoremap <leader>g :call SelectaIdentifier()<cr>
+
+" Auto Reload .vimrc http://stackoverflow.com/questions/2400264/is-it-possible-to-apply-vim-configurations-without-restarting/2403926#2403926
+augroup myvimrc
+    au!
+    au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
+augroup END
+" Auto Reload .vimrc
+
+" BufExplorer
+" vim-airline
+
+autocmd BufNewFile,BufRead /Users/rgould/dev/roll20-character-sheets/* set tabstop=4 shiftwidth=4 autoindent noexpandtab
+
+" vim-plug
+call plug#begin('~/.vim/plugged')
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown'] }
+call plug#end()
