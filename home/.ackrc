@@ -5,3 +5,5 @@
 --ignore-dir=node_modules
 --ignore-dir=vendor
 --ignore-dir=.meteor
+--ignore-dir=coverage
+--ignore-dir=build

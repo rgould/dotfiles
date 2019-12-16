@@ -214,7 +214,7 @@ endfunction
     map <leader>e :edit %%
     map <leader>v :view %%
 
-    nnoremap <leader>d :Dispatch<CR>
+    " nnoremap <leader>d :Dispatch<CR>
 
     " find merge conflict markers
     nmap <silent> <leader>cf <ESC>/\v^[<=>]{7}( .*\|$)<CR>
@@ -276,6 +276,16 @@ endfunction
 
     " Align selected lines
     vnoremap <leader>ib :!align<cr>
+
+    " Language learning:
+    " Open the current word in wiktionary:
+    nmap <leader>w :!open https://de.wiktionary.org/wiki/<C-R><C-W><CR><CR>
+    nmap <leader>q :!open "https://en.wiktionary.org/wiki/"<C-R><C-W>"\#Serbo-Croatian"<CR><CR>
+    nmap <leader>s :!open "https://dict.tu-chemnitz.de/dings.cgi?lang=en&service=deen&query=<C-R><C-W>"<CR><CR>
+    nmap <leader>x :!open https://dict.leo.org/englisch-deutsch/<C-R><C-W><CR><CR>
+    nmap <leader>d :!open https://www.duden.de/rechtschreibung/<C-R><C-W><CR><CR>
+    nmap <leader>u :!open https://www.dwds.de/wb/<C-R><C-W><CR><CR>
+    nmap <leader>2 :!open https://www.dwds.de/wp/<C-R><C-W><CR><CR>
 
     " Uncomment the following to have Vim jump to the last position when
     " reopening a file
@@ -346,6 +356,7 @@ endfunction
 " Find all files in all non-dot directories starting in the working directory.
 " Fuzzy select one of those. Open the selected file with :e.
 nnoremap <leader>f :call SelectaCommand("find * -type f", "", ":e")<cr>
+nnoremap <leader>p :call SelectaCommand("git ls-files -oc --exclude-standard", "", ":e")<cr>
 
 function! Get_visual_selection()
   let [lnum1, col1] = getpos("'<")[1:2]
@@ -383,3 +394,12 @@ Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown'] }
 call plug#end()
+
+
+" anki cloze
+
+function! Cloze()
+  execute "normal! ~"
+endfunction
+
+vnoremap <leader>c :call Cloze()<cr>

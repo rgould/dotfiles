@@ -8,7 +8,6 @@
 #
 # Credits to Iain Hecker, http://iain.nl
 # Tweaks by Rob Lowe (colors, irb/macirb patch, simple prompt)
-
 require 'rubygems'
 require 'yaml'
 

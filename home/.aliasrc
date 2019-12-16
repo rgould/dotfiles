@@ -8,7 +8,7 @@ alias k="kill"
 alias p="ps aux"
 alias top="htop"
 alias v="vim"
-alias vess="/usr/share/vim/vim73/macros/less.sh"
+# alias vmore=$(brew --prefix vim)/share/vim/vim80/macros/less.sh
 
 # Git aliases
 alias gd="git diff"

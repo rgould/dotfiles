@@ -67,6 +67,13 @@ alias ga="git add"
 alias gch="git checkout"
 export REPORTTIME=5
 
+# Easily add a remote to a git checkout
+# git-remote-add
+function gar() {
+ git remote add $1 git@github.com:$1/${PWD##*/}.git
+}
+alias git-remote-add=gar
+
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 [[ -s "$HOME/nvm/nvm.sh" ]] && . "$HOME/nvm/nvm.sh"
@@ -126,3 +133,9 @@ export LANG=is_IS.UTF-8
 # added by okgrow/ok
 export PATH=$PATH:/Users/rgould/.bin
 export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
+# Rails Development
+export DATABASE_HOST='127.0.0.1'
+export MONGO_HOST='127.0.0.1'
+
+export PATH=$PATH:/Users/rgould/Library/Python/2.7/bin
+export PATH=$PATH:$HOME/.cabal/bin:$HOME/.ghcup/bin
