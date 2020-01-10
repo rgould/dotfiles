@@ -239,14 +239,14 @@ endfunction
 
     " Rails i18n tools
     " Extract plain text from HAML, yanks to "b:
-    nmap <leader>q vg_"bc=t('.')hi
+    " nmap <leader>q vg_"bc=t('.')hi
     " Select a double quoted string, yank to b, replace with t('.')
-    nmap <leader>' vi'"byca' t('.')hi
+    " nmap <leader>' vi'"byca' t('.')hi
     " Select a double quoted string, yank to b, replace with t('.')
-    nmap <leader>" vi""byca" t('.')hi
+    " nmap <leader>" vi""byca" t('.')hi
     " Select a key, switch to last file (should be .yml file) and output key:
     " string from \"b and "c
-    nmap <leader>a viw"cyoc: "b"
+    " nmap <leader>a viw"cyoc: "b"
     " End Rails i18n tools
 
     nnoremap <leader>rt :!foreman run bundle exec rspec %<cr>
@@ -278,14 +278,19 @@ endfunction
     vnoremap <leader>ib :!align<cr>
 
     " Language learning:
+    " DE
     " Open the current word in wiktionary:
     nmap <leader>w :!open https://de.wiktionary.org/wiki/<C-R><C-W><CR><CR>
-    nmap <leader>q :!open "https://en.wiktionary.org/wiki/"<C-R><C-W>"\#Serbo-Croatian"<CR><CR>
     nmap <leader>s :!open "https://dict.tu-chemnitz.de/dings.cgi?lang=en&service=deen&query=<C-R><C-W>"<CR><CR>
     nmap <leader>x :!open https://dict.leo.org/englisch-deutsch/<C-R><C-W><CR><CR>
     nmap <leader>d :!open https://www.duden.de/rechtschreibung/<C-R><C-W><CR><CR>
     nmap <leader>u :!open https://www.dwds.de/wb/<C-R><C-W><CR><CR>
     nmap <leader>2 :!open https://www.dwds.de/wp/<C-R><C-W><CR><CR>
+    " IS
+    nmap <leader>q :!open "https://deis.dict.cc/?s=<C-R><C-W>"<CR><CR>
+    nmap <leader>a :!echo "http://digicoll.library.wisc.edu/cgi-bin/IcelOnline/IcelOnline.TEId-idx?type=simple&size=First+100&rgn=dentry&q1=<C-R><C-W>&submit=Search" \| sed -e 's/ð/\%F0/g' -e 's/á/\%E1/g' -e 's/é/\%E9/g' -e 's/í/\%ED/g' -e 's/ó/\%F3/g' -e 's/ú/\%FA/g' -e 's/ý/\%FD/g' -e 's/þ/\%FE/g' -e 's/æ/\%E6/g' -e 's/ö/\%F6/g' \| xargs open<CR><CR>
+    nmap <leader>z :!open "https://malid.is/leit/<C-R><C-W>"<CR><CR>
+
 
     " Uncomment the following to have Vim jump to the last position when
     " reopening a file
@@ -355,7 +360,7 @@ endfunction
 
 " Find all files in all non-dot directories starting in the working directory.
 " Fuzzy select one of those. Open the selected file with :e.
-nnoremap <leader>f :call SelectaCommand("find * -type f", "", ":e")<cr>
+nnoremap <leader>f :call SelectaCommand("find * -type f \| grep -v '^tmp' \| grep -v '^node_modules'", "", ":e")<cr>
 nnoremap <leader>p :call SelectaCommand("git ls-files -oc --exclude-standard", "", ":e")<cr>
 
 function! Get_visual_selection()
@@ -372,7 +377,7 @@ function! SelectaIdentifier()
   normal "zyiw
   " Fuzzy match files in the current directory, starting with the word under
   " the cursor
-  call SelectaCommand("find * -type f", "-s " . @z, ":e")
+  call SelectaCommand("find * -type f | grep -v '^tmp' | grep -v '^node_modules'", "-s " . @z, ":e")
 endfunction
 nnoremap <leader>g :call SelectaIdentifier()<cr>
 
