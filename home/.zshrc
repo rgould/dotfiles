@@ -57,14 +57,6 @@ unsetopt correct_all
 
 # Customize to your needs...
 export PATH="$PATH:$HOME/bin:$HOME/.bin:$ANDROID_HOME/tools"
-alias ssh-gu-staging="TERM=xterm ssh -t staging 'screen -U -R richard'"
-alias ssh-gu-smoke="TERM=xterm ssh -t smoke 'screen -U -R richard'"
-alias ssh-gu-ct="TERM=xterm ssh -t ct 'screen -U -R richard'"
-alias ....="cd ../../../"
-alias .....="cd ../../../../"
-alias be="bundle exec"
-alias ga="git add"
-alias gch="git checkout"
 export REPORTTIME=5
 
 # Easily add a remote to a git checkout
@@ -133,9 +125,46 @@ export LANG=is_IS.UTF-8
 # added by okgrow/ok
 export PATH=$PATH:/Users/rgould/.bin
 export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
+
 # Rails Development
 export DATABASE_HOST='127.0.0.1'
 export MONGO_HOST='127.0.0.1'
 
 export PATH=$PATH:/Users/rgould/Library/Python/2.7/bin
 export PATH=$PATH:$HOME/.cabal/bin:$HOME/.ghcup/bin
+export GRML_OSTYPE="$(uname -s)"
+
+# from https://github.com/jschaf/dotfiles/blob/master/zsh/.zshenv
+function autoload-executables-in-dir() {
+  local autoload_dir="$1"
+  fpath+="${autoload_dir}"
+
+  # Autoload all shell functions from in a given directory that have
+  # the executable bit set.  The executable bit is not necessary, but
+  # gives you an easy way to stop the autoloading of a particular
+  # shell function.
+  for func in ${autoload_dir}/*(N-.x:t); do
+    autoload -Uz $func;
+  done
+}
+autoload-executables-in-dir "${HOME}/.zsh/functions"
+
+# colourized man pages:
+# https://boredzo.org/blog/archives/2016-08-15/colorized-man-pages-understood-and-customized
+man() {
+    env \
+        LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+        LESS_TERMCAP_md=$(printf "\e[1;31m") \
+        LESS_TERMCAP_me=$(printf "\e[0m") \
+        LESS_TERMCAP_se=$(printf "\e[0m") \
+        LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+        LESS_TERMCAP_ue=$(printf "\e[0m") \
+        LESS_TERMCAP_us=$(printf "\e[1;32m") \
+            man "$@"
+}
+export PATH="$HOME/Library/Python/2.7/bin:$PATH"
+eval "$($HOME/dev/dalek/bin/dalek init -)"
+
+# added by travis gem
+[ -f /Users/rgould/.travis/travis.sh ] && source /Users/rgould/.travis/travis.sh
+>>>>>>> Stashed changes

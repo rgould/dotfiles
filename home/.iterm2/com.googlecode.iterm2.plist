@@ -674,7 +674,7 @@
 	<key>DimBackgroundWindows</key>
 	<false/>
 	<key>DimInactiveSplitPanes</key>
-	<true/>
+	<false/>
 	<key>DimOnlyText</key>
 	<false/>
 	<key>DisableFullscreenTransparency</key>
@@ -1499,6 +1499,8 @@
 			<string></string>
 		</dict>
 	</dict>
+	<key>HapticFeedbackForEsc</key>
+	<false/>
 	<key>HiddenAFRStrokeThickness</key>
 	<real>0.0</real>
 	<key>HiddenAdvancedFontRendering</key>
@@ -1776,9 +1778,9 @@
 	<key>MaxVertically</key>
 	<true/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~</string>
-	<key>NSNavPanelExpandedSizeForSaveMode</key>
-	<string>{712, 565}</string>
+	<string>~/Desktop</string>
+	<key>NSNavPanelExpandedSizeForOpenMode</key>
+	<string>{712, 448}</string>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
@@ -1787,6 +1789,14 @@
 	<false/>
 	<key>NSScrollViewShouldScrollUnderTitlebar</key>
 	<false/>
+<<<<<<< Updated upstream
+=======
+	<key>NSSplitView Subview Frames NSColorPanelSplitView</key>
+	<array>
+		<string>0.000000, 0.000000, 224.000000, 263.000000, NO, NO</string>
+		<string>0.000000, 264.000000, 224.000000, 43.000000, NO, NO</string>
+	</array>
+>>>>>>> Stashed changes
 	<key>NSTableView Columns v2 KeyBingingTable</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGNjdYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
@@ -1794,7 +1804,11 @@
 	gAKACoAN0xAJChEVGVdOUy5rZXlzoxITFIADgASABaMWFxiABoAHgAiACVpJZGVudGlm
 	aWVyVVdpZHRoVkhpZGRlblEwI0BowAAAAAAACNIhIiMkWiRjbGFzc25hbWVYJGNsYXNz
 	ZXNcTlNEaWN0aW9uYXJ5oiMlWE5TT2JqZWN00xAJCicrGaMSExSAA4AEgAWjLC0YgAuA
+<<<<<<< Updated upstream
 	DIAIgAlRMSNAdKAAAAAAANIhIjM0Xk5TTXV0YWJsZUFycmF5ozM1JVdOU0FycmF5XxAP
+=======
+	DIAIgAlRMSNAdKGdsi0OVtIhIjM0Xk5TTXV0YWJsZUFycmF5ozM1JVdOU0FycmF5XxAP
+>>>>>>> Stashed changes
 	TlNLZXllZEFyY2hpdmVy0Tg5VUFycmF5gAEACAARABoAIwAtADIANwBGAEwAUQBcAGMA
 	ZgBoAGoAbABzAHsAfwCBAIMAhQCJAIsAjQCPAJEAnACiAKkAqwC0ALUAugDFAM4A2wDe
 	AOcA7gDyAPQA9gD4APwA/gEAAQIBBAEGAQ8BFAEjAScBLwFBAUQBSgAAAAAAAAIBAAAA
@@ -1815,20 +1829,30 @@
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
-	<key>NSWindow Frame NSFontPanel</key>
-	<string>1236 237 445 77 0 0 1920 1177 </string>
-	<key>NSWindow Frame Preferences</key>
-	<string>161 463 606 456 0 0 1920 1177 </string>
+	<key>NSWindow Frame SUStatusFrame</key>
+	<string>1600 1343 400 129 1200 0 1200 1920 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
+<<<<<<< Updated upstream
 	<string>650 588 620 392 0 0 1920 1177 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>-931 -114 606 469 -1200 -240 1200 1897 </string>
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>269 656 796 486 0 0 1920 1177 </string>
+=======
+	<string>1490 1146 620 392 1200 0 1200 1920 </string>
+	<key>NSWindow Frame SessionsPreferences</key>
+	<string>-1078 45 606 469 -1200 -213 1200 1897 </string>
+	<key>NSWindow Frame SharedPreferences</key>
+	<string>1297 1437 770 429 1200 0 1200 1897 </string>
+>>>>>>> Stashed changes
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1920 1200 0 0 1920 1177 </string>
+	<string>0 0 1200 1920 0 0 1200 1897 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 0 1920 1200 0 0 1920 1177 </string>
+	<string>1200 0 1200 1920 1200 0 1200 1920 </string>
+	<key>NSWindow Frame iTerm Window 2</key>
+	<string>1200 0 1200 1920 1200 0 1200 1920 </string>
+	<key>NSWindow Frame iTerm Window 3</key>
+	<string>1319 307 972 436 1200 0 1200 1897 </string>
 	<key>NeverWarnAboutShortLivedSessions_16AD531A-52EB-4B3F-A851-4E4A71C16B58</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_16AD531A-52EB-4B3F-A851-4E4A71C16B58_selection</key>
@@ -2162,7 +2186,7 @@
 			<key>Hide After Opening</key>
 			<false/>
 			<key>Horizontal Spacing</key>
-			<real>1.1000000238418579</real>
+			<real>1.1000000000000001</real>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
@@ -2417,7 +2441,7 @@
 			<key>Use Italic Font</key>
 			<false/>
 			<key>Vertical Spacing</key>
-			<real>0.96522647142410278</real>
+			<real>0.96999999999999997</real>
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
@@ -3408,39 +3432,94 @@
 			<string>/Users/rgould</string>
 		</dict>
 	</array>
-	<key>NoSyncConfirmBeta</key>
-	<true/>
-	<key>NoSyncDoNotWarnBeforeMultilinePaste</key>
-	<true/>
-	<key>NoSyncDoNotWarnBeforeMultilinePaste_selection</key>
-	<integer>0</integer>
-	<key>NoSyncHaveShownPromoWithId_4</key>
+	<key>NoSyncAllAppVersions</key>
+	<array>
+		<string>3.3.0beta16</string>
+		<string>3.3.4beta1</string>
+		<string>3.3.0beta13</string>
+		<string>3.3.7beta1</string>
+		<string>3.3.0beta9</string>
+		<string>3.3.8beta3</string>
+		<string>3.3.8beta2</string>
+		<string>3.3.8beta1</string>
+	</array>
+	<key>NoSyncFrame_SessionsPreferences</key>
+	<dict>
+		<key>screenFrame</key>
+		<string>{{1200, 0}, {1200, 1920}}</string>
+		<key>topLeft</key>
+		<string>{1469, 595}</string>
+	</dict>
+	<key>NoSyncFrame_SharedPreferences</key>
+	<dict>
+		<key>screenFrame</key>
+		<string>{{0, 0}, {1200, 1920}}</string>
+		<key>topLeft</key>
+		<string>{269, 595}</string>
+	</dict>
+	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
+<<<<<<< Updated upstream
 	<string>11DA4566-A1EC-4E02-AF28-52D69E35BCCC</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
 	<integer>1</integer>
 	<key>NoSyncNeverRemindPrefsChangesCopy</key>
 	<true/>
+=======
+	<string>F0623D0C-E465-4947-8F6C-C8029E62CE83</string>
+	<key>NoSyncLaunchExperienceControllerRunCount</key>
+	<integer>25</integer>
+>>>>>>> Stashed changes
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>0</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
+<<<<<<< Updated upstream
 	<real>575638783.30768096</real>
+=======
+	<real>576066105.47905803</real>
+>>>>>>> Stashed changes
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
 	<true/>
 	<key>NoSyncPermissionToShowTip</key>
 	<false/>
 	<key>NoSyncRecordedVariables</key>
 	<dict>
+<<<<<<< Updated upstream
+=======
+		<key>0</key>
+		<array>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>id</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string></string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+		</array>
+>>>>>>> Stashed changes
 		<key>1</key>
 		<array>
 			<dict>
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+<<<<<<< Updated upstream
 				<string>columns</string>
+=======
+				<string>presentationName</string>
+>>>>>>> Stashed changes
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3448,7 +3527,11 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+<<<<<<< Updated upstream
 				<string>creationTimeString</string>
+=======
+				<string>tmuxRole</string>
+>>>>>>> Stashed changes
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3456,7 +3539,11 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+<<<<<<< Updated upstream
 				<string>tmuxWindowTitle</string>
+=======
+				<string>lastCommand</string>
+>>>>>>> Stashed changes
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3464,7 +3551,11 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+<<<<<<< Updated upstream
 				<string>tmuxStatusRight</string>
+=======
+				<string>profileName</string>
+>>>>>>> Stashed changes
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3472,7 +3563,11 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+<<<<<<< Updated upstream
 				<string>tmuxClientName</string>
+=======
+				<string>termid</string>
+>>>>>>> Stashed changes
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3480,7 +3575,11 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+<<<<<<< Updated upstream
 				<string>tty</string>
+=======
+				<string>tmuxWindowTitle</string>
+>>>>>>> Stashed changes
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3488,7 +3587,11 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+<<<<<<< Updated upstream
 				<string>mouseReportingMode</string>
+=======
+				<string>id</string>
+>>>>>>> Stashed changes
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3496,23 +3599,39 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+<<<<<<< Updated upstream
 				<string>badge</string>
+=======
+				<string>jobName</string>
+>>>>>>> Stashed changes
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
 			<dict>
 				<key>isTerminal</key>
+<<<<<<< Updated upstream
 				<false/>
 				<key>name</key>
 				<string>tab</string>
 				<key>nonterminalContext</key>
 				<integer>2</integer>
+=======
+				<true/>
+				<key>name</key>
+				<string>columns</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+>>>>>>> Stashed changes
 			</dict>
 			<dict>
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+<<<<<<< Updated upstream
 				<string>presentationName</string>
+=======
+				<string>tab.tmuxWindowTitle</string>
+>>>>>>> Stashed changes
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3520,7 +3639,11 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+<<<<<<< Updated upstream
 				<string>tmuxRole</string>
+=======
+				<string>hostname</string>
+>>>>>>> Stashed changes
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3528,7 +3651,11 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+<<<<<<< Updated upstream
 				<string>path</string>
+=======
+				<string>tmuxClientName</string>
+>>>>>>> Stashed changes
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3536,7 +3663,11 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+<<<<<<< Updated upstream
 				<string>jobName</string>
+=======
+				<string>path</string>
+>>>>>>> Stashed changes
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3544,7 +3675,11 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+<<<<<<< Updated upstream
 				<string>name</string>
+=======
+				<string>tmuxWindowTitleEval</string>
+>>>>>>> Stashed changes
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3552,7 +3687,11 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+<<<<<<< Updated upstream
 				<string>lastCommand</string>
+=======
+				<string>triggerName</string>
+>>>>>>> Stashed changes
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3560,7 +3699,11 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+<<<<<<< Updated upstream
 				<string>autoName</string>
+=======
+				<string>terminalIconName</string>
+>>>>>>> Stashed changes
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3576,7 +3719,11 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+<<<<<<< Updated upstream
 				<string>id</string>
+=======
+				<string>tmuxStatusRight</string>
+>>>>>>> Stashed changes
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3584,15 +3731,139 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+<<<<<<< Updated upstream
 				<string>terminalIconName</string>
+=======
+				<string>mouseReportingMode</string>
+>>>>>>> Stashed changes
 				<key>nonterminalContext</key>
 				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+<<<<<<< Updated upstream
+				<string>tmuxStatusLeft</string>
+=======
+				<string>name</string>
+>>>>>>> Stashed changes
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+<<<<<<< Updated upstream
+				<true/>
+				<key>name</key>
+				<string>autoLogId</string>
+=======
+				<false/>
+				<key>name</key>
+				<string>iterm2</string>
+				<key>nonterminalContext</key>
+				<integer>4</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>tmuxPaneTitle</string>
+>>>>>>> Stashed changes
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+<<<<<<< Updated upstream
+				<string>terminalWindowName</string>
+=======
+				<string>rows</string>
+>>>>>>> Stashed changes
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+<<<<<<< Updated upstream
+				<string>rows</string>
+=======
+				<string>username</string>
+>>>>>>> Stashed changes
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+<<<<<<< Updated upstream
+				<string>autoNameFormat</string>
+=======
+				<string>tty</string>
+>>>>>>> Stashed changes
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+<<<<<<< Updated upstream
+				<string>triggerName</string>
+=======
+				<string>autoLogId</string>
+>>>>>>> Stashed changes
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+<<<<<<< Updated upstream
+				<string>hostname</string>
+=======
+				<string>badge</string>
+>>>>>>> Stashed changes
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+<<<<<<< Updated upstream
+				<string>jobPid</string>
+=======
+				<string>tab.tmuxWindowName</string>
+>>>>>>> Stashed changes
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+<<<<<<< Updated upstream
+				<true/>
+				<key>name</key>
+				<string>pid</string>
+=======
+				<false/>
+				<key>name</key>
+				<string>tab</string>
+				<key>nonterminalContext</key>
+				<integer>2</integer>
 			</dict>
 			<dict>
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
 				<string>tmuxStatusLeft</string>
+>>>>>>> Stashed changes
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3600,23 +3871,50 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-				<string>autoLogId</string>
+<<<<<<< Updated upstream
+				<string>profileName</string>
+=======
+				<string>autoNameFormat</string>
+>>>>>>> Stashed changes
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
 			<dict>
 				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+<<<<<<< Updated upstream
+				<string>termid</string>
+=======
+				<string>autoName</string>
+>>>>>>> Stashed changes
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+<<<<<<< Updated upstream
+				<false/>
+				<key>name</key>
+				<string>iterm2</string>
+				<key>nonterminalContext</key>
+				<integer>4</integer>
+=======
 				<true/>
 				<key>name</key>
 				<string>terminalWindowName</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
+>>>>>>> Stashed changes
 			</dict>
 			<dict>
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-				<string>rows</string>
+<<<<<<< Updated upstream
+				<string>username</string>
+=======
+				<string>creationTimeString</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3624,23 +3922,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-				<string>autoNameFormat</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>triggerName</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>hostname</string>
+				<string>commandLine</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3657,38 +3939,7 @@
 				<true/>
 				<key>name</key>
 				<string>pid</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>profileName</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>termid</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<false/>
-				<key>name</key>
-				<string>iterm2</string>
-				<key>nonterminalContext</key>
-				<integer>4</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>username</string>
+>>>>>>> Stashed changes
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3699,7 +3950,11 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+<<<<<<< Updated upstream
 				<string>currentTab.currentSession.name</string>
+=======
+				<string>currentTab.currentSession.presentationName</string>
+>>>>>>> Stashed changes
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3707,7 +3962,11 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+<<<<<<< Updated upstream
 				<string>titleOverrideFormat</string>
+=======
+				<string>currentTab.iterm2.localhostName</string>
+>>>>>>> Stashed changes
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3715,7 +3974,19 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+<<<<<<< Updated upstream
 				<string>currentTab.currentSession.username</string>
+=======
+				<string>style</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>frame</string>
+>>>>>>> Stashed changes
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3731,7 +4002,11 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+<<<<<<< Updated upstream
 				<string>currentTab.currentSession.presentationName</string>
+=======
+				<string>currentTab.currentSession.termid</string>
+>>>>>>> Stashed changes
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3739,7 +4014,19 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+<<<<<<< Updated upstream
 				<string>currentTab.currentSession.jobName</string>
+=======
+				<string>currentTab.currentSession.terminalIconName</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentTab.currentSession.terminalWindowName</string>
+>>>>>>> Stashed changes
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3755,15 +4042,11 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+<<<<<<< Updated upstream
 				<string>titleOverride</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
+=======
 				<string>currentTab.currentSession</string>
+>>>>>>> Stashed changes
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3771,15 +4054,11 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-				<string>currentTab.currentSession.terminalIconName</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
+<<<<<<< Updated upstream
+				<string>currentTab.currentSession</string>
+=======
 				<string>currentTab.window</string>
+>>>>>>> Stashed changes
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3787,7 +4066,35 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+<<<<<<< Updated upstream
+				<string>currentTab.currentSession.terminalIconName</string>
+=======
+				<string>titleOverride</string>
+>>>>>>> Stashed changes
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+<<<<<<< Updated upstream
+				<string>currentTab.window</string>
+=======
+				<string>currentTab.currentSession.name</string>
+>>>>>>> Stashed changes
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+<<<<<<< Updated upstream
 				<string>currentTab.currentSession.terminalWindowName</string>
+=======
+				<string>id</string>
+>>>>>>> Stashed changes
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3795,12 +4102,88 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+<<<<<<< Updated upstream
+				<string>currentTab.currentSession.tty</string>
+=======
+				<string>currentTab.currentSession.path</string>
+>>>>>>> Stashed changes
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+<<<<<<< Updated upstream
+				<false/>
+				<key>name</key>
+				<string>iterm2</string>
+				<key>nonterminalContext</key>
+				<integer>4</integer>
+=======
+				<true/>
+				<key>name</key>
+				<string>currentTab.currentSession.commandLine</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+>>>>>>> Stashed changes
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+<<<<<<< Updated upstream
+				<string>currentTab.iterm2.localhostName</string>
+=======
+				<string>number</string>
+>>>>>>> Stashed changes
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+<<<<<<< Updated upstream
+				<string>currentTab.currentSession.path</string>
+=======
+				<string>currentTab.currentSession.hostname</string>
+>>>>>>> Stashed changes
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+<<<<<<< Updated upstream
+				<string>currentTab.currentSession.hostname</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+		</array>
+		<key>2</key>
+		<array>
+=======
 				<string>currentTab.currentSession.tty</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
+>>>>>>> Stashed changes
 			<dict>
 				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+<<<<<<< Updated upstream
+				<string>id</string>
+=======
+				<string>currentTab.currentSession.username</string>
+>>>>>>> Stashed changes
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+<<<<<<< Updated upstream
+=======
 				<false/>
 				<key>name</key>
 				<string>iterm2</string>
@@ -3809,25 +4192,23 @@
 			</dict>
 			<dict>
 				<key>isTerminal</key>
+>>>>>>> Stashed changes
 				<true/>
 				<key>name</key>
-				<string>currentTab.iterm2.localhostName</string>
+				<string>titleOverrideFormat</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
 			<dict>
 				<key>isTerminal</key>
+<<<<<<< Updated upstream
+				<false/>
+				<key>name</key>
+				<string>currentSession</string>
+=======
 				<true/>
 				<key>name</key>
-				<string>currentTab.currentSession.path</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>currentTab.currentSession.hostname</string>
+				<string>currentTab.currentSession.jobName</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3838,15 +4219,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-				<string>id</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>titleOverrideFormat</string>
+				<string>currentSession.terminalIconName</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3854,7 +4227,8 @@
 				<key>isTerminal</key>
 				<false/>
 				<key>name</key>
-				<string>currentSession</string>
+				<string>title</string>
+>>>>>>> Stashed changes
 				<key>nonterminalContext</key>
 				<integer>1</integer>
 			</dict>
@@ -3862,7 +4236,11 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+<<<<<<< Updated upstream
 				<string>currentSession.username</string>
+=======
+				<string>title</string>
+>>>>>>> Stashed changes
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3870,7 +4248,11 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+<<<<<<< Updated upstream
 				<string>titleOverride</string>
+=======
+				<string>tmuxWindowTitle</string>
+>>>>>>> Stashed changes
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3878,7 +4260,11 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+<<<<<<< Updated upstream
 				<string>currentSession.hostname</string>
+=======
+				<string>currentSession.presentationName</string>
+>>>>>>> Stashed changes
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3886,7 +4272,11 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+<<<<<<< Updated upstream
 				<string>currentSession.path</string>
+=======
+				<string>iterm2.localhostName</string>
+>>>>>>> Stashed changes
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3894,7 +4284,27 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+<<<<<<< Updated upstream
 				<string>currentSession.name</string>
+=======
+				<string>window</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<false/>
+				<key>name</key>
+				<string>window</string>
+				<key>nonterminalContext</key>
+				<integer>16</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentSession.tty</string>
+>>>>>>> Stashed changes
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3910,7 +4320,11 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+<<<<<<< Updated upstream
 				<string>currentSession.presentationName</string>
+=======
+				<string>currentSession.name</string>
+>>>>>>> Stashed changes
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3918,7 +4332,11 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+<<<<<<< Updated upstream
 				<string>currentSession</string>
+=======
+				<string>tmuxWindowName</string>
+>>>>>>> Stashed changes
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3926,7 +4344,11 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+<<<<<<< Updated upstream
 				<string>currentSession.tty</string>
+=======
+				<string>id</string>
+>>>>>>> Stashed changes
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3934,7 +4356,11 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+<<<<<<< Updated upstream
 				<string>iterm2.localhostName</string>
+=======
+				<string>titleOverride</string>
+>>>>>>> Stashed changes
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3942,7 +4368,19 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+<<<<<<< Updated upstream
 				<string>window</string>
+=======
+				<string>currentSession.username</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentSession.path</string>
+>>>>>>> Stashed changes
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3958,7 +4396,27 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+<<<<<<< Updated upstream
 				<string>tmuxWindow</string>
+=======
+				<string>titleOverrideFormat</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentSession.hostname</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentSession.terminalWindowName</string>
+>>>>>>> Stashed changes
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3970,6 +4428,33 @@
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
+<<<<<<< Updated upstream
+=======
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>tmuxWindow</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<false/>
+				<key>name</key>
+				<string>currentSession</string>
+				<key>nonterminalContext</key>
+				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentSession</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+>>>>>>> Stashed changes
 		</array>
 		<key>4</key>
 		<array>
@@ -4000,13 +4485,7 @@
 		</array>
 	</dict>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
-	<real>486677673.097615</real>
-	<key>NoSyncTimeOfLastPromo</key>
-	<real>477702093.18602198</real>
-	<key>NoSyncTimeOfLastPromoDownload</key>
-	<real>486391540.17275703</real>
-	<key>NoSyncTipsDisabled</key>
-	<true/>
+	<real>544029146.518399</real>
 	<key>NotFirstRun</key>
 	<true/>
 	<key>OnlyWhenMoreTabs</key>
@@ -4071,7 +4550,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/rgould/.homesick/repos/dotfiles/home/.iterm2</string>
+	<string>/Users/rgould/.iterm2/</string>
 	<key>PromptOnClose</key>
 	<true/>
 	<key>PromptOnQuit</key>
@@ -4089,11 +4568,23 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
+<<<<<<< Updated upstream
 	<string>https://iterm2.com/appcasts/testing_new.xml?shard=75</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
 	<date>2019-03-29T11:39:31Z</date>
+=======
+	<string>https://iterm2.com/appcasts/testing_new.xml?shard=0</string>
+	<key>SUHasLaunchedBefore</key>
+	<true/>
+	<key>SULastCheckTime</key>
+	<date>2019-12-18T14:36:14Z</date>
+	<key>SUSendProfileInfo</key>
+	<false/>
+	<key>SUUpdateRelaunchingMarker</key>
+	<false/>
+>>>>>>> Stashed changes
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -4104,10 +4595,16 @@
 	<true/>
 	<key>SmartPlacement</key>
 	<false/>
+	<key>SoundForEsc</key>
+	<false/>
 	<key>SplitPaneDimmingAmount</key>
+<<<<<<< Updated upstream
 	<real>0.46732521057128906</real>
 	<key>SuppressRestartAnnouncement</key>
 	<true/>
+=======
+	<real>0.15053083957769933</real>
+>>>>>>> Stashed changes
 	<key>SwitchTabModifier</key>
 	<integer>4</integer>
 	<key>SwitchWindowModifier</key>
@@ -4144,6 +4641,11 @@
 	<false/>
 	<key>TmuxDashboardLimit</key>
 	<integer>10</integer>
+	<key>ToolbeltTools</key>
+	<array>
+		<string>Profiles</string>
+		<string>Captured Output</string>
+	</array>
 	<key>TripleClickSelectsFullWrappedLines</key>
 	<false/>
 	<key>URLHandlers</key>
@@ -4155,6 +4657,8 @@
 	<key>UseCompactLabel</key>
 	<true/>
 	<key>UseLionStyleFullscreen</key>
+	<false/>
+	<key>VisualIndicatorForEsc</key>
 	<false/>
 	<key>WebKitDefaultFontSize</key>
 	<integer>11</integer>
@@ -4169,10 +4673,14 @@
 	<key>findIgnoreCase_iTerm</key>
 	<true/>
 	<key>findMode_iTerm</key>
-	<integer>0</integer>
+	<integer>3</integer>
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
+<<<<<<< Updated upstream
 	<string>3.3.0beta1</string>
+=======
+	<string>3.3.8beta3</string>
+>>>>>>> Stashed changes
 </dict>
 </plist>

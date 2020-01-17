@@ -10,6 +10,11 @@
 " properly set to work with the Vim-related packages available in Debian.
 runtime! debian.vim
 
+" Stupid work around for error: https://github.com/SirVer/ultisnips/issues/996
+if has('python3')
+  silent! python3 1
+endif
+
 " runtime! autoload/pathogen.vim
 " silent! call pathogen#runtime_append_all_bundles()
 execute pathogen#infect()
@@ -190,7 +195,7 @@ endfunction
 
     function! NumberToggle()
       if(&relativenumber == 1)
-        set number
+        set norelativenumber
       else
         set relativenumber
       endif
@@ -237,7 +242,9 @@ endfunction
     let g:NERDTreeDirArrowCollapsible = '▾'
     let g:NERDTreeGlyphReadOnly = "RO"
 
-    " Rails i18n tools
+    " Rails i18n tools 
+    " Extract plain text between HTML tags, yanks to "b:
+    " nmap <leader>w 0f>lvf<h"bc<%= t('') %>hhhh
     " Extract plain text from HAML, yanks to "b:
     " nmap <leader>q vg_"bc=t('.')hi
     " Select a double quoted string, yank to b, replace with t('.')
@@ -268,11 +275,8 @@ endfunction
     " Hide search highlighting
     map <silent> <leader>nh :nohls <CR>
 
-    " Ruby stuff
-    " hashrocket
-    imap <C-l> <Space>=><Space>
-
     nnoremap <leader><leader> <c-^>
+    nnoremap <leader>a :A<cr>
 
     " Align selected lines
     vnoremap <leader>ib :!align<cr>
@@ -291,6 +295,15 @@ endfunction
     nmap <leader>a :!echo "http://digicoll.library.wisc.edu/cgi-bin/IcelOnline/IcelOnline.TEId-idx?type=simple&size=First+100&rgn=dentry&q1=<C-R><C-W>&submit=Search" \| sed -e 's/ð/\%F0/g' -e 's/á/\%E1/g' -e 's/é/\%E9/g' -e 's/í/\%ED/g' -e 's/ó/\%F3/g' -e 's/ú/\%FA/g' -e 's/ý/\%FD/g' -e 's/þ/\%FE/g' -e 's/æ/\%E6/g' -e 's/ö/\%F6/g' \| xargs open<CR><CR>
     nmap <leader>z :!open "https://malid.is/leit/<C-R><C-W>"<CR><CR>
 
+    " UltiSnips
+    " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+    let g:UltiSnipsExpandTrigger="<tab>"
+    let g:UltiSnipsListSnippets="<c-l>"
+    let g:UltiSnipsJumpForwardTrigger="<c-j>"
+    let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
+    " If you want :UltiSnipsEdit to split your window.
+    let g:UltiSnipsEditSplit="vertical"
 
     " Uncomment the following to have Vim jump to the last position when
     " reopening a file

@@ -1,3 +1,8 @@
+alias ....="cd ../../../"
+alias .....="cd ../../../../"
+alias be="bundle exec"
+alias ga="git add"
+alias gch="git checkout"
 
 # Shell stuff
 alias a="ack"
@@ -27,10 +32,11 @@ alias b="bundle"
 alias f="foreman start"
 alias frun="foreman run bundle exec"
 alias r="rails"
-alias rc="foreman run rails c"
-alias rg="foreman run rails g"
-alias rk="foreman run rake"
-alias rks="foreman run rake spec"
+alias rc="foreman run bundle exec rails c"
+alias rg="foreman run bundle exec rails g"
+alias rk="foreman run bundle exec rake"
+alias rks="foreman run bundle exec rake spec"
+alias rkt="foreman run bundle exec rake test"
 alias rs="rspec"
 # Remove :focus from rspec files
 alias unfocus="for file in \$(grep -irl ', :focus' spec) ; do sed -i '' 's/, :focus//' \$file; done"
@@ -46,12 +52,21 @@ alias hao="heroku addons:open"
 alias hr="heroku run"
 alias sentry="heroku addons:open sentry"
 alias logentries="heroku addons:open logentries"
-alias -g RP="-r production"
-alias -g RS="-r staging"
+alias p="powder"
+alias pr="powder restart"
+alias po="powder open"
+alias dbstat="foreman run bundle exec rake db:migrate:status"
+alias staging="echo 'export RAILS_ENV=staging' | cat > .powenv"
+
+alias -g RP="RAILS_ENV=production"
+alias -g RS="RAILS_ENV=staging"
+alias -g RT="RAILS_ENV=test"
 
 # Generic dev
-alias p="pygmentize"
+alias pyg="pygmentize"
 alias pat="pygmentize"
+
+alias brk="banner l"
 
 # Global aliases
 alias -g G="| grep"
