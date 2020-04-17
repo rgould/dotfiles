@@ -167,4 +167,4 @@ eval "$($HOME/dev/dalek/bin/dalek init -)"
 
 # added by travis gem
 [ -f /Users/rgould/.travis/travis.sh ] && source /Users/rgould/.travis/travis.sh
->>>>>>> Stashed changes
+export PATH=/Users/rgould/dalia/CintReports/bin:$PATH
