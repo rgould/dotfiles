@@ -408,11 +408,11 @@ autocmd BufNewFile,BufRead /Users/rgould/dev/roll20-character-sheets/* set tabst
 
 " vim-plug
 call plug#begin('~/.vim/plugged')
+Plug 'lervag/vimtex'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown'] }
 call plug#end()
-
 
 " anki cloze
 
