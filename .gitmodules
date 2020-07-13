@@ -25,3 +25,6 @@
 [submodule "home/.vim/pack/tpope/start/repeat"]
 	path = home/.vim/pack/tpope/start/repeat
 	url = https://tpope.io/vim/repeat.git
+[submodule "home/.vim/pack/tpope/start/surround"]
+	path = home/.vim/pack/tpope/start/surround
+	url = https://tpope.io/vim/surround.git
