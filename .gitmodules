@@ -22,3 +22,6 @@
 [submodule "home/.vim/bundle/vim-latex-live-preview"]
 	path = home/.vim/bundle/vim-latex-live-preview
 	url = https://github.com/xuhdev/vim-latex-live-preview.git
+[submodule "home/.vim/pack/tpope/start/repeat"]
+	path = home/.vim/pack/tpope/start/repeat
+	url = https://tpope.io/vim/repeat.git
