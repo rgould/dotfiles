@@ -190,7 +190,7 @@ extend_console 'interactive_editor' do
 end
 
 # Show results of all extension-loading
-puts "#{ANSI[:GRAY]}~> Console extensions:#{ANSI[:RESET]} #{$console_extensions.join(' ')}#{ANSI[:RESET]}"
+puts "#{ANSI[:GREEN]}~> Console extensions:#{ANSI[:RESET]} #{$console_extensions.join(' ')}#{ANSI[:RESET]}"
 
 IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb_history"
 IRB.conf[:SAVE_HISTORY] = 1000
@@ -206,10 +206,21 @@ class Object
   alias_method :m, :my_methods
 end
 
+def history(idx=nil)
+  history = Readline::HISTORY.to_a
+  if !idx
+    puts history.each_with_index.map { |x,i| "[#{i}] #{x}" }.join("\n")
+  elsif idx >= 0 && idx < history.length
+    puts history[idx]
+    # TODO figure out how to eval the above
+  else
+    puts "index out of range (0...#{history.length})"
+  end
+end
 
 ######### RAILS 3 ONLY
 
-if defined?(ActiveSupport::Notifications)
+if defined?(ActiveSupport::Notifications) && defined?(Rails)
 
   def reload_factories!
     reload!
@@ -233,5 +244,3 @@ if defined?(ActiveSupport::Notifications)
   rescue LoadError; end
 
 end
-
-
