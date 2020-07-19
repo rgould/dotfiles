@@ -34,3 +34,9 @@
 [submodule "home/.vim/bundle/vim-unimpaired"]
 	path = home/.vim/bundle/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired.git
+[submodule "home/.vim/plugged/vim-prettier"]
+	path = home/.vim/plugged/vim-prettier
+	url = https://github.com/prettier/vim-prettier.git
+[submodule "home/.vim/plugged/vimtex"]
+	path = home/.vim/plugged/vimtex
+	url = https://github.com/lervag/vimtex.git
