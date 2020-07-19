@@ -40,3 +40,6 @@
 [submodule "home/.vim/plugged/vimtex"]
 	path = home/.vim/plugged/vimtex
 	url = https://github.com/lervag/vimtex.git
+[submodule "home/.vim/bundle/Vundle.vim"]
+	path = home/.vim/bundle/Vundle.vim
+	url = https://github.com/VundleVim/Vundle.vim.git
