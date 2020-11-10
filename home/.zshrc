@@ -122,9 +122,7 @@ bindkey "^S" "insert-selecta-path-in-command-line"
 
 export LC_ALL=is_IS.UTF-8
 export LANG=is_IS.UTF-8
-# added by okgrow/ok
 export PATH=$PATH:/Users/rgould/.bin
-export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
 
 # Rails Development
 export DATABASE_HOST='127.0.0.1'
@@ -151,7 +149,7 @@ autoload-executables-in-dir "${HOME}/.zsh/functions"
 
 # colourized man pages:
 # https://boredzo.org/blog/archives/2016-08-15/colorized-man-pages-understood-and-customized
-man() {
+function man {
     env \
         LESS_TERMCAP_mb=$(printf "\e[1;31m") \
         LESS_TERMCAP_md=$(printf "\e[1;31m") \
