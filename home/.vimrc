@@ -268,6 +268,11 @@ endfunction
     " use ctrl-space to exit insert mode
     "inoremap <C-space> <Esc>
 
+    " Insert date-times
+    " 2020-08-24:
+    nnoremap <leader>D "=strftime('%Y-%m-%d')<CR>P
+    inoremap <C-6> <C-R>=strftime('%Y-%m-%d')<CR>
+
     " search next/previous -- center in page
     nmap n nzz
     nmap N Nzz
