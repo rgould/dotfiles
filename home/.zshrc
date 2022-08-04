@@ -159,7 +159,7 @@ function man {
         LESS_TERMCAP_us=$(printf "\e[1;32m") \
             man "$@"
 }
-eval "$($HOME/dev/dalek/bin/dalek init -)"
+#eval "$($HOME/dev/dalek/bin/dalek init -)"
 
 # added by travis gem
 [ -f /Users/rgould/.travis/travis.sh ] && source /Users/rgould/.travis/travis.sh
