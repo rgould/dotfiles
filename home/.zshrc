@@ -44,7 +44,7 @@ export DISABLE_AUTO_TITLE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-remote-branch rbenv)
+plugins=(git rbenv)
 
 # disable the annoying oh-my-zsh update prompt. this will auto update now.
 export DISABLE_UPDATE_PROMPT="true"
