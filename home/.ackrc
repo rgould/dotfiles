@@ -3,6 +3,7 @@
 --type-set=cucumber=.feature
 --ignore-dir=spec/vcr
 --ignore-dir=node_modules
+--ignore-dir=storage
 --ignore-dir=vendor
 --ignore-dir=.meteor
 --ignore-dir=coverage
@@ -12,3 +13,7 @@
 --ignore-dir=umd
 --ignore-dir=dist
 --ignore-dir=coverage
+--ignore-dir=tmp
+--ignore-dir=public/assets
+--ignore-dir=public/packs
+--ignore-dir=public/packs-test
