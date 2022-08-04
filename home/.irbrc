@@ -218,6 +218,11 @@ def history(idx=nil)
   end
 end
 
+def copy(value)
+  `echo #{value} | ghead -c -1 | pbcopy`
+  value
+end
+
 ######### RAILS 3 ONLY
 
 if defined?(ActiveSupport::Notifications) && defined?(Rails)
