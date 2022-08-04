@@ -30,6 +30,10 @@ Plugin 'nelstrom/vim-textobj-rubyblock'
 runtime macros/matchit.vim
 
 Plugin 'posva/vim-vue'
+Plugin 'othree/html5.vim'
+Plugin 'pedrohdz/vim-yaml-folds'
+Plugin 'vimwiki/vimwiki'
+Plugin 'rlue/vim-fold-rspec'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -99,10 +103,10 @@ endfunction
     " scroll the view screen when moving within x lines of the end
     set scrolloff=5
     set autoindent shiftwidth=2 softtabstop=2 tabstop=2 expandtab
-    set foldmethod=indent   "fold based on indent
-    set foldnestmax=10      "deepest fold is 10 levels
+    set foldmethod=syntax
     set nofoldenable        "dont fold by default
-    set foldlevel=1         "this is just what i use
+    " set foldnestmax=10      "deepest fold is 10 levels
+    " set foldlevel=1
     " Enable tab complete for commands.
     " first tab shows all matches. next tab starts cycling through the matches
     set wildmenu
@@ -271,7 +275,7 @@ endfunction
     " Insert date-times
     " 2020-08-24:
     nnoremap <leader>D "=strftime('%Y-%m-%d')<CR>P
-    inoremap <C-6> <C-R>=strftime('%Y-%m-%d')<CR>
+    inoremap <F2> <C-R>=strftime('%Y-%m-%d')<CR>
 
     " search next/previous -- center in page
     nmap n nzz
@@ -293,7 +297,7 @@ endfunction
     " nmap <leader>q vg_"bc=t('.')hi
     " Select a double quoted string, yank to b, replace with t('.')
     " nmap <leader>' vi'"byca' t('.')hi
-    " Select a double quoted string, yank to b, replace with t('.')
+    " Select a single quoted string, yank to b, replace with t('.')
     " nmap <leader>" vi""byca" t('.')hi
     " Select a key, switch to last file (should be .yml file) and output key:
     " string from \"b and "c
@@ -417,7 +421,7 @@ endfunction
 
 " Find all files in all non-dot directories starting in the working directory.
 " Fuzzy select one of those. Open the selected file with :e.
-nnoremap <leader>f :call SelectaCommand("find * -type f \| grep -v '^tmp' \| grep -v '^node_modules'", "", ":e")<cr>
+nnoremap <leader>f :call SelectaCommand("find . -type d \\( -path ./node_modules -o -path ./storage -o -path ./tmp -o -path ./coverage -o -path ./.git \\) -prune -o -type f", "", ":e")<cr>
 nnoremap <leader>p :call SelectaCommand("git ls-files -oc --exclude-standard", "", ":e")<cr>
 
 function! Get_visual_selection()
@@ -434,7 +438,7 @@ function! SelectaIdentifier()
   normal "zyiw
   " Fuzzy match files in the current directory, starting with the word under
   " the cursor
-  call SelectaCommand("find * -type f | grep -v '^tmp' | grep -v '^node_modules'", "-s " . @z, ":e")
+  call SelectaCommand("find . -type d \\( -path ./node_modules -o -path ./storage -o -path ./tmp -o -path ./coverage -o -path ./.git \\) -prune -o -type f", "-s " . @z, ":e")
 endfunction
 nnoremap <leader>g :call SelectaIdentifier()<cr>
 
@@ -465,3 +469,25 @@ function! Cloze()
 endfunction
 
 vnoremap <leader>c :call Cloze()<cr>
+
+let wiki_hazkorin = {}
+let wiki_hazkorin.name = 'hazkorin'
+let wiki_hazkorin.auto_export = 0
+let wiki_hazkorin.auto_toc = 1
+let wiki_hazkorin.path = '~/ebooks/campaign_notes/hazkorin/src'
+let wiki_hazkorin.path_html = '~/ebooks/campaign_notes/hazkorin/html'
+
+let wiki_mtomady = {}
+let wiki_mtomady.name = 'mtomady'
+let wiki_mtomady.auto_toc = 1
+let wiki_mtomady.path = '~/mtomady/vimwiki/src'
+let wiki_mtomady.path_html = '~/mtomady/vimwiki/html'
+
+let wiki_french = {}
+let wiki_french.name = 'french'
+let wiki_french.auto_toc = 1
+let wiki_french.path = '~/Documents/learning_notes/experts_incubator/french'
+let wiki_french.path_html = '~/Documents/learning_notes/experts_incubator/french/html'
+let g:vimwiki_list = [wiki_hazkorin, wiki_mtomady, wiki_french]
+let g:vimwiki_auto_chdir = 1
+let g:vimwiki_auto_header = 1
