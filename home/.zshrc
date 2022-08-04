@@ -128,7 +128,6 @@ export PATH=$PATH:/Users/rgould/.bin
 export DATABASE_HOST='127.0.0.1'
 export MONGO_HOST='127.0.0.1'
 
-export PATH=$PATH:/Users/rgould/Library/Python/2.7/bin
 export PATH=$PATH:$HOME/.cabal/bin:$HOME/.ghcup/bin
 export GRML_OSTYPE="$(uname -s)"
 
@@ -160,9 +159,20 @@ function man {
         LESS_TERMCAP_us=$(printf "\e[1;32m") \
             man "$@"
 }
-export PATH="$HOME/Library/Python/2.7/bin:$PATH"
 eval "$($HOME/dev/dalek/bin/dalek init -)"
 
 # added by travis gem
 [ -f /Users/rgould/.travis/travis.sh ] && source /Users/rgould/.travis/travis.sh
 export PATH=/Users/rgould/dalia/CintReports/bin:$PATH
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/terraform terraform
+export PATH="/usr/local/opt/postgresql@12/bin:$PATH"
+export ROLL20_CHARACTER_SHEETS_DIR="$HOME/dev/roll20-character-sheets"
