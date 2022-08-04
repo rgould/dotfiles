@@ -74,3 +74,8 @@ alias -g GI="| grep -i"
 alias -g GV="| grep -v"
 alias -g GIV="| grep -iv"
 alias -g PB="| pbcopy"
+
+# OSX stuff
+alias ulimitfix='sudo launchctl limit maxfiles 65536 200000'
+
+alias de='de_artikel_anki'
