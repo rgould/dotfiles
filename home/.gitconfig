@@ -26,9 +26,12 @@
 	editor = vim
 	autocrlf = input
 	excludesfile = /Users/rgould/.gitignore_global
+	autoclrf = input
 
 [diff]
   tool = p4diff
+	submodule = log
+	colorMoved = zebra
 [merge]
   log = true
   keepBackup = false;
@@ -73,3 +76,7 @@
 	user = rgould
 [init]
 	templatedir = ~/.git_template
+[pull]
+	rebase = true
+[fetch]
+	prune = true
