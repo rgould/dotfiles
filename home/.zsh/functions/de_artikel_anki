@@ -1,0 +1,3 @@
+function de_artikel_anki() {
+  artikel --anki $1 | anki --cloze --deck "🇩🇪deutsch::grammatik"
+}
