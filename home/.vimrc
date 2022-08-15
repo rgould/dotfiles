@@ -85,6 +85,7 @@ endfunction
     syntax on
     " Enable filetype-specific indenting and plugins
     filetype plugin indent on
+    filetype plugin on
     " show the `best match so far' as search strings are typed
     set incsearch
     " Highlight search results once found:
@@ -477,17 +478,17 @@ let wiki_hazkorin.auto_toc = 1
 let wiki_hazkorin.path = '~/ebooks/campaign_notes/hazkorin/src'
 let wiki_hazkorin.path_html = '~/ebooks/campaign_notes/hazkorin/html'
 
-let wiki_mtomady = {}
-let wiki_mtomady.name = 'mtomady'
-let wiki_mtomady.auto_toc = 1
-let wiki_mtomady.path = '~/mtomady/vimwiki/src'
-let wiki_mtomady.path_html = '~/mtomady/vimwiki/html'
+let wiki_samedi = {}
+let wiki_samedi.name = 'samedi'
+let wiki_samedi.auto_toc = 1
+let wiki_samedi.path = '~/Documents/vimwiki/src'
+let wiki_samedi.path_html = '~/Documents/vimwiki/html'
 
 let wiki_french = {}
 let wiki_french.name = 'french'
 let wiki_french.auto_toc = 1
 let wiki_french.path = '~/Documents/learning_notes/experts_incubator/french'
 let wiki_french.path_html = '~/Documents/learning_notes/experts_incubator/french/html'
-let g:vimwiki_list = [wiki_hazkorin, wiki_mtomady, wiki_french]
+let g:vimwiki_list = [wiki_hazkorin, wiki_french, wiki_samedi]
 let g:vimwiki_auto_chdir = 1
 let g:vimwiki_auto_header = 1
