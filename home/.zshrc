@@ -177,5 +177,5 @@ complete -o nospace -C /usr/local/bin/terraform terraform
 export PATH="/usr/local/opt/postgresql@12/bin:$PATH"
 export ROLL20_CHARACTER_SHEETS_DIR="$HOME/dev/roll20-character-sheets"
 
-export PATH="/usr/local/opt/node@14/bin:$PATH"
-export PATH="/usr/local/opt/libpq/bin:$PATH"
+export PATH="/opt/homebrew/opt/node@14/bin:$PATH"
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
