@@ -33,7 +33,12 @@ Plugin 'posva/vim-vue'
 Plugin 'othree/html5.vim'
 Plugin 'pedrohdz/vim-yaml-folds'
 Plugin 'vimwiki/vimwiki'
+Plugin 'preservim/tagbar'
 Plugin 'rlue/vim-fold-rspec'
+Plugin 'joker1007/vim-ruby-heredoc-syntax'
+Plugin 'mileszs/ack.vim'
+Plugin 'iloginow/vim-stylus'
+Plugin 'tpope/vim-abolish'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -138,7 +143,8 @@ endfunction
     set modeline
     set modelines=3
 
-    set tags=./.git/tags
+    "set tags=./.git/tags
+    set tags=./tags,tags;$HOME/tags
     map <leader>r :TlistToggle<CR>
 
     nnoremap / /\v
@@ -245,6 +251,7 @@ endfunction
     endfunc
 
     nnoremap <C-x> :call NumberToggle()<cr>
+    nmap <F8> :TagbarToggle<CR>
 
 
     " when some text is selected, copy it to OSX's clipboard with this
@@ -307,6 +314,7 @@ endfunction
     nnoremap <leader>rt :!foreman run bundle exec rspec %<cr>
     nnoremap <leader>ru :!rspec %<cr>
     nnoremap <leader>c :!rubocop -D %<cr>
+    nnoremap <leader>q :!bin/compile<cr>
     nnoremap <leader>ra :Dispatch foreman run bundle exec rake spec<cr>
     nnoremap <leadeR>rs :execute "!rspec %:" . line(".")<cr>
 
@@ -332,16 +340,16 @@ endfunction
     " Language learning:
     " DE
     " Open the current word in wiktionary:
-    nmap <leader>w :!open https://de.wiktionary.org/wiki/<C-R><C-W><CR><CR>
-    nmap <leader>s :!open "https://dict.tu-chemnitz.de/dings.cgi?lang=en&service=deen&query=<C-R><C-W>"<CR><CR>
-    nmap <leader>x :!open https://dict.leo.org/englisch-deutsch/<C-R><C-W><CR><CR>
-    nmap <leader>d :!open https://www.duden.de/rechtschreibung/<C-R><C-W><CR><CR>
-    nmap <leader>u :!open https://www.dwds.de/wb/<C-R><C-W><CR><CR>
-    nmap <leader>2 :!open https://www.dwds.de/wp/<C-R><C-W><CR><CR>
-    " IS
-    nmap <leader>q :!open "https://deis.dict.cc/?s=<C-R><C-W>"<CR><CR>
-    nmap <leader>a :!echo "http://digicoll.library.wisc.edu/cgi-bin/IcelOnline/IcelOnline.TEId-idx?type=simple&size=First+100&rgn=dentry&q1=<C-R><C-W>&submit=Search" \| sed -e 's/ð/\%F0/g' -e 's/á/\%E1/g' -e 's/é/\%E9/g' -e 's/í/\%ED/g' -e 's/ó/\%F3/g' -e 's/ú/\%FA/g' -e 's/ý/\%FD/g' -e 's/þ/\%FE/g' -e 's/æ/\%E6/g' -e 's/ö/\%F6/g' \| xargs open<CR><CR>
-    nmap <leader>z :!open "https://malid.is/leit/<C-R><C-W>"<CR><CR>
+    "nmap <leader>w :!open https://de.wiktionary.org/wiki/<C-R><C-W><CR><CR>
+    "nmap <leader>s :!open "https://dict.tu-chemnitz.de/dings.cgi?lang=en&service=deen&query=<C-R><C-W>"<CR><CR>
+    "nmap <leader>x :!open https://dict.leo.org/englisch-deutsch/<C-R><C-W><CR><CR>
+    "nmap <leader>d :!open https://www.duden.de/rechtschreibung/<C-R><C-W><CR><CR>
+    "nmap <leader>u :!open https://www.dwds.de/wb/<C-R><C-W><CR><CR>
+    "nmap <leader>2 :!open https://www.dwds.de/wp/<C-R><C-W><CR><CR>
+    "" IS
+    "nmap <leader>q :!open "https://deis.dict.cc/?s=<C-R><C-W>"<CR><CR>
+    "nmap <leader>a :!echo "http://digicoll.library.wisc.edu/cgi-bin/IcelOnline/IcelOnline.TEId-idx?type=simple&size=First+100&rgn=dentry&q1=<C-R><C-W>&submit=Search" \| sed -e 's/ð/\%F0/g' -e 's/á/\%E1/g' -e 's/é/\%E9/g' -e 's/í/\%ED/g' -e 's/ó/\%F3/g' -e 's/ú/\%FA/g' -e 's/ý/\%FD/g' -e 's/þ/\%FE/g' -e 's/æ/\%E6/g' -e 's/ö/\%F6/g' \| xargs open<CR><CR>
+    "nmap <leader>z :!open "https://malid.is/leit/<C-R><C-W>"<CR><CR>
 
     " UltiSnips
     " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
@@ -469,6 +477,8 @@ function! Cloze()
 endfunction
 
 vnoremap <leader>c :call Cloze()<cr>
+" https://vim.fandom.com/wiki/View_text_file_in_two_columns
+noremap <silent> <Leader>ss :<C-u>let @z=&so<CR>:set so=0 noscb<CR>:bo vs<CR>Ljzt:setl scb<CR><C-w>p:setl scb<CR>:let &so=@z<CR>
 
 let wiki_hazkorin = {}
 let wiki_hazkorin.name = 'hazkorin'
@@ -488,6 +498,22 @@ let wiki_french.name = 'french'
 let wiki_french.auto_toc = 1
 let wiki_french.path = '~/Documents/learning_notes/experts_incubator/french'
 let wiki_french.path_html = '~/Documents/learning_notes/experts_incubator/french/html'
-let g:vimwiki_list = [wiki_hazkorin, wiki_mtomady, wiki_french]
+
+let wiki_30x500 = {}
+let wiki_30x500.name = '30x500'
+let wiki_30x500.auto_toc = 1
+let wiki_30x500.path = '~/Documents/learning_notes/30x500'
+let wiki_30x500.path_html = '~/Documents/learning_notes/30x500/html'
+
+let g:vimwiki_list = [wiki_hazkorin, wiki_mtomady, wiki_french, wiki_30x500]
 let g:vimwiki_auto_chdir = 1
 let g:vimwiki_auto_header = 1
+
+let tlist_vimwiki_settings = 'wiki;h:Headers'
+let g:tagbar_type_vimwiki = {
+\ 'ctagstype' : 'vimwiki',
+\ 'kinds'     : [
+\ 'h:header',
+\ ],
+\ 'sort'    : 0
+\ }
